@@ -519,16 +519,16 @@ function runReport(id, res) {
 
 
 
-            console.log(" - FIND MATCHES");
+            console.log(" - FIND MATCHES";
 
 
             var regex = new RegExp(/src\s*=\s*"(.+?)"/gimu);
 
-            console.log(111);
+            console.log(regex);
 
             var mat = html.match(regex);
 
-            console.log(222);
+            console.log(mat);
 
             html = html.replace(regex, function (match) {
 
