@@ -526,7 +526,11 @@ function runReport(id, res) {
             });
 
 
+            console.log("--CHECKS");
+
             for (var i = 0; i < mat.length; i++) {
+
+                console.log("- "+ i);
 
                 mat[i] = mat[i].replace('src=', '');
                 mat[i] = mat[i].substring(1, mat[i].length - 1);
