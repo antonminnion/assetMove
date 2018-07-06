@@ -12,6 +12,8 @@ var segments = require('../classes/segments');
 var segments2 = require('../classes/segments2');
 var writeFile = require('write');
 
+var Regex = require('regex');
+
 
 var validEntityArray = [];
 
@@ -524,17 +526,12 @@ function runReport(id, res) {
             console.log(" - FIND MATCHES");
 
 
-            var regex = /src\s*=\s*"(.+?)"/gimu;
+            var regex = /src\s*=\s*"(.+?)"/g;
 
 
             console.log(regex);
             console.log(regex.test('src="gsdhhdsgdsgh"'));
 
-
-
-            console.log(mat);
-
-            console.log(html);
 
             html = html.replace(regex, function (match) {
 
