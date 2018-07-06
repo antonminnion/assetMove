@@ -504,6 +504,8 @@ function runReport(id, res) {
 
             console.log("-RP CALL SUCCESS");
 
+            console.log(repos);
+
 
             var html = "";
 
