@@ -1,0 +1,456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"><title>METTLER TOLEDO</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="format-detection" content="telephone=no">
+	
+
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="http://de.mt.com/favicon.ico">
+<link rel="icon" href="http://de.mt.com/favicon.ico">
+<style type="text/css">
+ReadMsgBody {width: 100%;} .ExternalClass {width: 100%;} .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div {line-height: normal;} body {-webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; margin: 0 !important;padding: 0 !important;-ms-text-size-adjust:100%;} p {margin: 1em 0;} BODY:link {color: #333333 !important; text-decoration: underline !important;} a[x-apple-data-detectors] {color: inherit !important;text-decoration: none !important;font-size: inherit !important;font-family: inherit !important;font-weight: inherit !important;line-height: inherit !important;} table td {border-collapse: collapse;mso-table-lspace:0pt;mso-table-rspace:0pt;} img {outline: 0;-ms-interpolation-mode:bicubic;} a img {	border: none;} p
+ {margin: 1em 0;} @-ms-viewport {width: device-width;} v\:* { behavior: url(#default#VML);display:inline-block; }
+		
+	body{
+		background-color: #ffffff;
+		}
+	a.btn-link:link{ 
+		color: #ffffff !important; 
+		text-decoration: none !important;
+	}
+	a{ 
+		color: #333d96 !important;
+		text-decoration:none !important; 
+	}
+	a:hover {color:#67d945 !important;
+		text-decoration:none !important;
+		} 
+		
+	a:visited {color:#333d96 !important;
+		text-decoration:none !important;
+		}  
+		
+	a:hover {color:#67d945 !important;
+		text-decoration:none !important;
+		} 
+		
+	a:active {color:#67d945 !important;
+		text-decoration:none !important;
+		}  
+		
+	a#btn{ 
+		color: #ffffff !important; 
+		text-decoration: none !important;
+	}	
+
+@media only screen and (max-width: 480px) {
+		.spacer-5 { 
+			padding-left: 5px !important;
+			padding-right: 5px !important;
+			padding-top: 5px !important;
+			padding-bottom: 5px !important; 
+		}		
+		.spacer-10 { 
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+			padding-top: 10px !important;
+			padding-bottom: 10px !important; 
+		}
+		.spacer-20 { 
+			padding-left: 20px !important;
+			padding-right: 20px !important;
+			padding-top: 20px !important;
+			padding-bottom: 20px !important; 
+		}
+		.spacer-r0 { 
+			padding-left: 10px !important;
+			padding-right: 0px !important;
+			padding-top: 10px !important;
+			padding-bottom: 10px !important; 
+		}		
+		.spacer-b10 { 
+			padding-bottom: 10px !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			padding-top: 0 !important; 
+		}
+		.spacer-t10 { 
+			padding-bottom: 0 !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			padding-top: 10px !important; 
+		}
+		.spacer-tb10 { 
+			padding-bottom: 10px !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			padding-top: 10px !important; 
+		}
+		.spacer-l10 { 
+			padding-bottom: 0 !important;
+			padding-left: 10px !important;
+			padding-right: 0 !important;
+			padding-top: 0 !important; 
+		}
+		.spacer-r10 { 
+			padding-bottom: 0 !important;
+			padding-left: 0 !important;
+			padding-right: 10px !important;
+			padding-top: 0 !important; 
+		}
+		.spacer-b20 { 
+			padding-bottom: 20px !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			padding-top: 0 !important; 
+		}
+		.spacer-t20 { 
+			padding-bottom: 0 !important;
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			padding-top: 20px !important; 
+		}
+		.spacer-l20 { 
+			padding-bottom: 0 !important;
+			padding-left: 20px !important;
+			padding-right: 0 !important;
+			padding-top: 0 !important; 
+		}
+		.spacer-r20 { 
+			padding-bottom: 0 !important;
+			padding-left: 0 !important;
+			padding-right: 20px !important;
+			padding-top: 0 !important; 
+		}
+		
+		.spacer-0 { 
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			padding-top: 0 !important;
+			padding-bottom: 0 !important; 
+
+		}		
+		.spacer-l0 { 
+			padding-left: 0 !important;	
+		}		
+		.spacer-lr10 { 
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+			padding-top: 0 !important;
+			padding-bottom: 0 !important;  
+		}
+		
+		.spacer-bt10 { 
+			padding-left: 0 !important;
+			padding-right: 0 !important;
+			padding-top: 10px !important;
+			padding-bottom: 10px !important;  
+		}
+		.spacer-edit { 
+			padding-left: 10px !important;
+			padding-right: 10px !important;
+			padding-top: 20px !important;
+			padding-bottom: 10px !important; 
+		}
+		
+		.photo{ 
+			width:100% !important; 
+			height:auto !important;
+		}
+		.align-center { 
+			text-align:center !important;
+		}
+		.align-left{ 
+			text-align:left !important;
+		}
+		.align-right{ 
+			text-align:right !important;
+		}
+		.resize300 { 
+	  		width:300px !important;
+		}
+		.resize250 { 
+	  		width:250px !important;
+		}
+		.resize200 { 
+	  		width:200px !important;
+		}
+		.resize150 { 
+	  		width:150px !important;
+		}
+		.resize100 { 
+			width:100px !important;
+		}
+		.mobile-hidden, .sideblock-hidden {
+			display: none !important;
+		}
+		.btn{
+			width: 100% !important;
+			border: 0px solid #333d96 !important;
+			-webkit-border-radius: 0px !important;
+			-moz-border-radius: 0px !important;
+			border-radius: 0px !important;
+		}
+		.fullwidth{
+			width: 100% !important;
+		}	
+
+		.show {
+			display: block !important;
+			font-size: inherit !important;
+			max-height: inherit !important;
+			overflow: auto !important;
+		}
+		.service150 {
+			width:44% !important;
+			padding-top:5px !important;
+		}
+		
+		.service150_text {
+			width:50% !important;
+			padding-left:12px !important;
+
+			font-size:12px !important;
+		}
+		.service_text {
+			font-size:12px !important;
+		}
+		.six_icon {
+			width:60px !important;
+			padding-left:20px !important;
+			padding-right:20px !important;
+			padding-bottom:10px !important;
+			
+		}
+		.nav {
+			text-decoration: none !important;
+			width: 100% !important;
+			display: block !important;
+			text-align: center !important;
+			border-bottom: 1px solid #FFFFFF !important;
+			border-left: 0px !important;
+			vertical-align: middle !important;
+			padding-left: 0px !important;
+			height: auto !important;
+			padding-right: 0px !important;
+		}
+		.nav a {
+			display: block !important;
+			font-size: 14px !important;
+			padding-left: 0px !important;
+			padding-right: 0px !important;
+			padding-top: 8px !important;
+			padding-bottom: 9px !important;
+			vertical-align: middle !important;
+		}
+		.impressum_navi td {
+			text-decoration: none !important;
+			width: 300px !important;
+			display: block !important;
+			font-size: 11px !important;
+			text-align: center !important;
+			padding:0 !important;
+		}
+		.impressum_navi td a {
+			text-decoration: none !important;
+			width: 280px !important;
+			display: block !important;
+			font-size: 12px !important;
+			text-align: center !important;
+			padding:10px !important;
+			border-bottom: 1px solid #FFFFFF !important;
+		}
+		.impressum_navi td .last-navi-child {
+			border-bottom: none !important;
+		}
+		.picture{ 
+			width:120px !important; 
+			height:auto !important;
+		}
+		
+		.headline{
+			font-size:22px !important;
+			line-height:24px !important;
+		}
+		.paragraph{	
+			font-size:16px !important;
+			line-height:22px !important;
+		}
+		
+		.navi_box{
+			font-size:16px !important;
+			background-color:#f4f2f4 !important;
+			border-bottom: 4px solid #ffffff !important;
+		}
+		
+		.navi{
+			font-size:16px !important;
+		}
+		
+		.imprint{
+			height:auto !important;
+		}
+		
+		.date_event {
+			font-size:16px !important;
+			background-color:#f4f2f4 !important;
+			border-bottom: 4px solid #ffffff !important;
+		} 
+		
+		.crop div {
+			position: relative !important;
+			overflow: hidden !important;
+			width: 100% !important;
+			height: 220px !important;
+		}		
+		.crop img {
+			position:absolute !important;
+			top: 0 !important;
+			left: -18px !important;
+			height: 220px !important;
+		}
+}
+</style>
+</head>
+<body style="margin: 0px; padding:0px; -webkit-text-size-adjust:none; background-color:#ffffff" bgcolor="#ffffff"><style type="text/css">
+div.preheader 
+{ display: none !important; } 
+</style>
+  <div class="preheader" style="font-size: 1px; display: none !important;">METTLER TOLEDO provides a wealth of free tools and documentation about the latest techniques.</div>
+
+
+<div align="center" style="margin: 0px; padding:0px; -webkit-text-size-adjust:none; background-color:#ffffff">
+              
+                <table cellspacing="0" cellpadding="0" border="0" width="640" class="fullwidth dashedBorder" align="center">
+                  <tr>
+                    <td align="center" valign="top" class="drop"> 
+                      <table cellpadding="0" cellspacing="0" border="0" bordercolor="" width="100%" bgcolor="">
+                        <tr>
+                          <td>
+                            <table width="100%" bgcolor="" border="0" bordercolor="" cellpadding="0" cellspacing="0">
+                              <tr>
+                                <td style="font-family:Arial; font-size:13px">
+                                  <!--00_Header START-->
+                                  
+                      <table border="0" cellpadding="0" cellspacing="0" width="640" align="center" class="fullwidth dashedBorder">
+    <tbody><tr>
+      <td align="left" valign="middle" style="padding-top: 5px; padding-bottom: 5px; font-family: Tahoma, Verdana, Segoe, sans-serif; color: #535353; font-size: 10px;">
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+          <tbody>
+            <tr>
+              <td align="right" style="font-family: Tahoma, Verdana, Segoe, sans-serif; color: #535353; font-size: 10px;"> <strong><a data-targettype="sysaction" href="http://app.glf.mt.com/e/es?s=~~eloqua..type--emailfield..syntax--siteid..encodeFor--url~~&e=~~eloqua..type--emailfield..syntax--elqemailsaveguid..encodeFor--url~~&elqTrackId=66ED7099DD8829B4A279F25061415F5E" target="_blank" style="color: #333d96; text-decoration: none;" title="View online version">View online version</a></strong></td>
+            </tr>
+          </tbody>
+        </table></td>
+    </tr>
+  </tbody></table>
+  <!--00_Header END--></td></tr></table></td></tr></table></td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="top" class="drop"> <table cellpadding="0" cellspacing="0" border="0" bordercolor="" width="100%" bgcolor=""><tr><td><table width="100%" bgcolor="" border="0" bordercolor="" cellpadding="0" cellspacing="0"><tr><td style="font-family:Arial; font-size:13px">
+                      
+                      <!--01_Logo START-->
+  <a href="http://glo.mt.com/global/en/home.html?elqTrackId=98eb492102a34130b5c1503ab1ad445b&elqTrack=true" target="_blank" title="METTLER TOLEDO">                  
+                    
+  <table cellspacing="0" cellpadding="0" border="0" bgcolor="#3498cd" align="center" width="640" class="fullwidth dashedBorder">
+    <tbody><tr>
+      <td bgcolor="#3498cd" valign="middle" class="spacer-lr10" style="padding: 0px 0px 0px 20px;"><table cellspacing="0" cellpadding="0" border="0" align="left" width="178" class="fullwidth">
+          <tbody><tr>
+            <td style="padding-top: 10px;"><a href="http://glo.mt.com/global/en/home.html?elqTrackId=110fa4ad75284acf97dcee917a259f65&elqTrack=true" target="_blank" title="METTLER TOLEDO"><img border="0" width="178" height="20" src="http://images.glf.mt.com/EloquaImages/clients/MettlerToledoEMEA/%7bedb7ebad-ffe4-4f3e-a131-4e3df3a0f367%7d_enewsletter-title-03-bhz_big.png" style="display: block; width: 178px; height: 20px; border-color: #000000; margin: 0px;"></a></td>
+                   
+          </tr>
+          <tr>
+            <td bgcolor="#3498cd" align="left" valign="top" style="padding-top: 5px; padding-bottom: 10px; font-size: 18px; line-height: 18px; font-family: Tahoma,Verdana,Segoe,sans-serif; color: #ffffff; text-align: left;" class="fullwidth align-left spacer-bt10"><a target="_blank" href="http://glo.mt.com/global/en/home.html?elqTrackId=1538d2243d2a4b4ca56470ed00cdd152&elqTrack=true" style="color: #ffffff; text-decoration: none;" class="btn-link" title="Newsletter"></a></td>   
+          </tr>
+        </tbody></table>
+        <table cellspacing="0" cellpadding="0" border="0" align="right" class="fullwidth">
+          <tbody><tr>
+            <td bgcolor="#3498cd" align="right" valign="bottom" style="padding-top: 10px; padding-right: 10px; padding-bottom: 10px; font-size: 12px; line-height: 14px; font-family: Tahoma,Verdana,Segoe,sans-serif; color: #ffffff; text-align: right;" class="fullwidth align-left spacer-bt10"><a target="_blank" href="http://glo.mt.com/global/en/home.html?elqTrackId=5aefa01aad8c48d6a0c8067b831569f2&elqTrack=true" style="color: #ffffff; text-decoration: none;" class="btn-link" title=""></a></td></tr></tbody></table></td></tr>
+  </tbody></table>
+  </a>
+  <!--01_Logo END--></td></tr></table></td></tr></table></td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="top" class="drop"> <table cellpadding="0" cellspacing="0" border="0" bordercolor="" width="100%" bgcolor=""><tr><td><table width="100%" bgcolor="" border="0" bordercolor="" cellpadding="0" cellspacing="0"><tr><td style="font-family:Arial; font-size:13px"><!--Headline START-->
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="center" width="640" class="fullwidth dashedBorder">
+	<tbody>
+		<tr>
+			<td bgcolor="#ffffff" align="left" valign="top" style="font-family: Tahoma,Verdana,Segoe,sans-serif; color: #666666; font-size: 14px; line-height: 18px;" class="spacer-10">
+			<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="left" width="100%" class="fullwidth dashedBorder">
+				<tbody>
+					<tr>
+						<td bgcolor="#ffffff" align="left" valign="top" class="paragraph spacer-0 dashedBorder" style="font-family: Tahoma,Verdana,Segoe,sans-serif; color: #666666; font-size: 13px; line-height: 18px; padding: 5px 5px 5px 5px;">
+						
+			</td>
+		</tr>
+	</tbody>
+</table>
+<!--Headline END--></td></tr></tbody></table></td></tr></table></td>
+                  </tr>
+                 
+                   <tr>
+                    <td align="center" valign="top" class="drop"> <table cellpadding="0" cellspacing="0" border="0" bordercolor="" width="100%" bgcolor=""><tr><td><table width="100%" bgcolor="" border="0" bordercolor="" cellpadding="0" cellspacing="0"><tr><td style="font-family:Arial; font-size:13px"><!--Article START-->
+<table width="640" cellspacing="0" cellpadding="0" border="0" bgcolor="#f4f2f4" align="center" class="fullwidth dashedBorder">
+		
+	<tbody>
+				
+		<tr>
+						
+          <td valign="top" bgcolor="#ffffff" align="left" style="font-family: Tahoma,Verdana,Segoe,sans-serif; color: #666666; font-size: 14px; line-height: 18px;padding-left:20px;" class="spacer-10">			
+			
+            <table width="600" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" align="left" class="fullwidth dashedBorder">
+								
+				<tbody>
+                  <tr><td>
+<!--Picture across START-->
+                    <table width="600" cellspacing="0" cellpadding="0" border="0" align="left" class="fullwidth spacer-b10">
+								
+				<tbody>
+										
+					<tr>
+												
+                      <td valign="top" bgcolor="#ffffff" align="center" class="fullwidth spacer-t10" style="padding-top:6px;padding-bottom:15px;"><a target="_blank" href="https://s1103.t.eloqua.com/e/f2?elqFormName=ClickTrackWelcomeNurturing&elqSiteID=1103&Link=A1&SBU=All&content=Overview&URL=https://www.mt.com/global/en/home/site_content/aboutus/innovation.html?cmp=em-glf_GLO_eMail_SER_WLC_topKAwelcome_20180315&emailAddress=~~eloqua..type--emailfield..syntax--EmailAddress..innerText--EmailAddress..encodeFor--url~~&elqTrackId=4382bce5440b4ed79deceb4c2efdf4e6&elqTrack=true" title="">
+ <img border="0" class="fullwidth" style="display: block; border-color: #000000; margin: 0px; -webkit-box-shadow: 0 5px 12px -6px rgba(0, 0, 0, 0.92); -moz-box-shadow: 0 5px 12px -6px rgba(0, 0, 0, 0.92); box-shadow: 0px 5px 12px -6px rgba(0,0,0,0.92); " src="http://images.glf.mt.com/EloquaImages/clients/MettlerToledoEMEA/%7Bc74eab85-46a8-45b9-857c-b0276b3f4d8f%7D_value-chain_600px.jpg" alt="Measurement Solutions" title="Download our “Solutions and Competences” brochure "></a></td>					
+					</tr>
+									
+				</tbody>
+							
+			</table>
+<!--Picture across END-->
+                    </td></tr>
+										
+					<tr>
+												
+                      <td valign="top" bgcolor="#ffffff" align="left" class="paragraph spacer-0" style="font-family: Tahoma,Verdana,Segoe,sans-serif; color: #666666; font-size: 13px; line-height: 18px; padding-top: 0px; padding-left: 0px; padding-bottom: 15px;">METTLER TOLEDO has long been a leader in innovation and quality. Aiming for sustainable and breakthrough performance, a selection of our innovations is highlighted here. Innovation and quality starts with traditional research and development but goes beyond technology to include a full understanding of customer needs. Simply said, we are committed to ensuring our innovations translate into real value for our customers.</td></tr>
+                  <tr><td>
+  
+ <!--Call to action START--> 
+                    <table cellspacing="0" cellpadding="0" border="0" width="100%">
+										<tbody>
+											<tr>
+												<td align="left" width="25" valign="top" style="font-family: Tahoma,Verdana,Segoe,sans-serif; color: #666666; font-size: 16px; line-height: 18px; padding-bottom: 3px;" class="bullet"><img border="0" width="17" height="17" src="http://images.glf.mt.com/EloquaImages/clients/MettlerToledoEMEA/%7B2aa3db04-27e2-4d80-8ec0-7d51d579422b%7D_Green_arrow_on_white_background_2.png" style="display: block;"></td>
+                                              <td class="headline spacer-b10" style="font-family: Tahoma,Verdana,Segoe,sans-serif; color: #333d96; font-size: 12px; line-height: 18px; padding-bottom: 3px;"><strong><a target="_blank" style="text-decoration: none; color: #333d96;" href="https://s1103.t.eloqua.com/e/f2?elqFormName=ClickTrackWelcomeNurturing&elqSiteID=1103&Link=A1&SBU=All&content=Overview&URL=https://www.mt.com/global/en/home/site_content/aboutus/innovation.html?cmp=em-glf_GLO_eMail_SER_WLC_topKAwelcome_20180315&emailAddress=~~eloqua..type--emailfield..syntax--EmailAddress..innerText--EmailAddress..encodeFor--url~~&elqTrackId=3acc551738d24f838542f1814a8355f7&elqTrack=true" title="">Download our “Solutions and Competences” brochure  
+                                          </a></strong></td></tr></tbody></table>
+<!--Call to action END-->
+                    </td></tr>
+									
+				</tbody>
+							
+			</table>
+								
+		</td></tr>
+				
+		<tr>
+						
+			<td bgcolor="#ffffff">&nbsp;			</td>		
+		</tr>
+			
+	</tbody>
+</table>
+<!--Article END--></td></tr></table></td></tr></table>
+                  </td></tr>
+                </table>
+</td></tr></table></div>
+
+</body>
+<div></div>
+<br></html>

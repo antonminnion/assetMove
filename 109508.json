@@ -1,0 +1,1 @@
+{"type":"ContactFilter","currentStatus":"Draft","depth":"complete","description":"","folderId":"1413","name":"Contact is in Third Brand Unsubscribed Group","permissions":["Retrieve","SetSecurity","Delete","Update"],"updatedAt":"1340706218","updatedBy":"11","criteria":[{"type":"UnsubscriptionCriterion","id":"-184926","emailGroupIds":["17"]}],"scope":"global","statement":"-184926"}

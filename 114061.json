@@ -1,0 +1,24 @@
+noaxlab.se,
+nordlab.se,
+novakemi.se,
+oleico.se,
+oleinitec.se,
+ollemo.se,
+omniprocess.se,
+optical.se,
+optiscangroup.com,
+movomech.se,
+novaweigh.com,
+pfisterwaagen.com,
+prominent.com,
+
+
+
+
+1463
+        1469
+
+
+
+
+{"type":"ContactFilter","currentStatus":"Draft","depth":"complete","description":"","folderId":"1413","name":"SYSTEM - Scoring Have Application?","permissions":["Retrieve","SetSecurity","Delete","Update"],"updatedAt":"1369328435","updatedBy":"18","criteria":[{"type":"ContactFieldCriterion","id":"-290173","condition":{"type":"TextValueCondition","operator":"equal","value":"1"},"fieldId":"100464"},{"type":"ContactFieldCriterion","id":"-290174","condition":{"type":"TextValueCondition","operator":"equal","value":"1"},"fieldId":"100465"},{"type":"ContactFieldCriterion","id":"-290175","condition":{"type":"TextValueCondition","operator":"equal","value":"1"},"fieldId":"100467"},{"type":"ContactFieldCriterion","id":"-290176","condition":{"type":"TextValueCondition","operator":"equal","value":"1"},"fieldId":"100469"},{"type":"ContactFieldCriterion","id":"-290177","condition":{"type":"TextValueCondition","operator":"equal","value":"1"},"fieldId":"100631"},{"type":"ContactFieldCriterion","id":"-290178","condition":{"type":"TextValueCondition","operator":"equal","value":"1"},"fieldId":"100466"},{"type":"ContactFieldCriterion","id":"-290179","condition":{"type":"TextValueCondition","operator":"equal","value":"1"},"fieldId":"100468"},{"type":"ContactFieldCriterion","id":"-290180","condition":{"type":"TextValueCondition","operator":"equal","value":"1"},"fieldId":"100470"}],"scope":"global","statement":"-290173 OR -290174 OR -290175 OR -290176 OR -290177 OR -290178 OR -290179 OR -290180"}

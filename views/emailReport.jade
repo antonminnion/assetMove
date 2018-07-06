@@ -1,0 +1,41 @@
+extends layout
+
+block content
+  h3 Processing Email
+  table.table
+    thead.thead-dark
+      tr
+        th(scope='col') #
+        th(scope='col') Property
+        th(scope='col') Value
+    tbody
+      tr
+        th(scope='col') #
+        th(scope='col') Field Merges?
+        th(scope='col') #{fm}
+
+
+  table.table
+    thead.thead-dark
+      tr
+        th(scope='col') #
+        th(scope='col') Source
+        th(scope='col') Replacement
+    tbody
+
+
+
+
+    each ll, index in links.elements
+      tr
+        th(scope='row')=index
+        td=ll.source
+        td=ll.replacement
+
+  .card(style='width: 100%;')
+    .card-body
+      h5.card-title Email Preview
+      samp.card-text
+        | !{html}
+
+

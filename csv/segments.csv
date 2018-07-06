@@ -1,0 +1,110 @@
+name,id,folderId
+SYSTEM - Append Hard Bouncebacks,613,17728
+Active App1 Corrected,863,6960
+CASL Canada Monthly Domain,874,5799
+App1_Corrected,987,6960
+Active_Industry_Workplace,988,6960
+Overview Active_Inactive Contacts,1218,6960
+Leads Printed Mailers,1629,6960
+KPI - Reachable Contacts,2025,6960
+Contacts TLH Welcome,2051,14024
+Lead Scoring - All active contacts,2303,8459
+Contacts TLH Nurturing,2712,14025
+Contacts MPE Nurturing,2714,14025
+Contacts MPE Welcome,2715,14024
+Contacts EME Welcome,2717,14024
+Contacts TRA Welcome,2718,14024
+Contacts FAB Nurturing,2763,14025
+Contacts AAE Nurturing,2767,14025
+Contacts Generic Nurturing,2771,14025
+Contacts FAB Welcome,2774,14024
+Contacts CHE Welcome,2777,14024
+Contacts AAE Welcome,2778,14024
+Contacts Generic Welcome,2781,14024
+Contacts PAB Nurturing,2783,14025
+Contacts RAW Welcome,2786,14024
+EMT_EMK_XXXX_All_All_All_All_All_All_WebsiteVisitTrigger(Updated),2918,10575
+Contacts PAB Welcome,3004,14024
+DATA - App1 Overview,3171,6960
+DATA - Score Overview,3172,6960
+Append_EmailAddress_Private_Quarterly,3320,13339
+Email_Validation_App_Contacts,3331,5829
+TechnicalAppend_Estimation_Quarterly,3336,13339
+SYSTEM - Phone Number Remove Inactive Contacts,3346,5888
+TMK_TM_XXXX_ROW_All_All_All_All_All_CCPNurturing,3492,6265
+Append_EmailAddress_Monthly,3605,13339
+Append_Phone_WrongFormat_Quarterly,3639,13339
+FSX_CQX_PQX_Unsubscribe,3702,5697
+FSX_CQX_PQX_FormSubmits,3703,5697
+Append_Phone_MissingValues_Monthly,3716,13339
+Append_IndustryCodes_MissingValues_Monthly,3792,13339
+Append_Address_MissingValues_Monthly,3794,13339
+Append_NumberofEmployees_Monthly,3796,13339
+Append_Company&Division_Quarterly,3826,13339
+Append_Phone_Check_Quarterly,4003,13339
+SYSTEM -  Wrong Industry Sub,4035,14282
+Append_Address_MailingBounces_Quarterly_AcquireList,4061,13339
+Alexandra_Phone_TMWrong,4297,13339
+Contacts TopKA Welcome,4328,14024
+Append_Address_Check_Quarterly_AcquireList,4334,13339
+SYSTEM - Lead Scoring - Populating Custom Data Objects,4374,5888
+SYSTEM - Character encoding for survey links,4451,5888
+TMK_TM_1707_Japan/Korea_Qualification,4532,17465
+TMK_TM_1703_Japan/Korea_TQ_test,4552,17073
+TMK_TM_1703_EN(EU)_All_All_All_All_All_TeleQueue_CCP_Nurturing,4575,13413
+TeleQueue Deactivate,4586,17073
+TMK_TM_1703_DE(DACH)_All_All_All_All_All_TeleQueue_CCP_Nurturing,4590,13413
+TMK_TM_1703_FR(EU)_All_All_All_All_All_TeleQueue_CCP_Nurturing,4591,13413
+TMK_TM_1703_EN(NA)_All_All_All_All_All_TeleQueue_CCP_Nurturing,4592,13413
+INDX MT Audience,4672,5697
+Append_Function_ExistingValues_Check_Quaterly,4679,13339
+TeleQueue - Non Existing Contacts,4681,17073
+ENQ_XXXX_All_All_All_All_All_All_DormantSelection,4770,18435
+SYSTEM Inactivate - DACH contacts with email address,4826,5888
+Append_IndustryCodesNonresponsives_Check_Quarterly,4838,13339
+No region contacts,4845,17073
+Append_EmailAddress_SpamTrapCheck_Quarterly,4878,13339
+ENQ_XXXX_All_All_All_All_All_All_Pre-Dormant Selection,4895,18435
+Lead Dashboard - 2nd Brands,4896,6960
+TMK_TM_1708_CN_All_All_All_All_All_TeleQueue_China_Qualification,4941,13413
+Scheduled callback not blank,4952,17467
+TeleQueue - Remove from CDO,4953,17073
+Outlook,5022,17728
+SYSTEM - Pending Contacts,5052,5888
+Soft and Hard Bounces Append Check_Magdalena,5063,17728
+Estimation Flatworld Industry Level 1 Research,5297,5799
+GLF Leads 2018,5341,6960
+To reactivate contacts,5411,17728
+SYSTEM - Feeder GNF TM Nurturing,5453,17308
+Append_General_GNF_Monthly_AcquireList,5456,13339
+SYSTEM - GNF Cold Leads After General Append,5458,5888
+TMK_TM_XXXX_ROW_All_All_All_All_All_CCPNurturing,5462,18384
+TMK_TM_XXXX_NA_All_All_All_All_All_CCPQualification,5465,18384
+TMK_TM_XXXX_ROW_All_All_All_All_All_CCPQualification,5467,18384
+TMK_TM_XXXX_EU_All_All_All_All_All_TopDialogNurturing,5468,18384
+TMK_TM_XXXX_NA_All_All_All_All_All_TopDialogQualification,5469,18384
+SYSTEM – GNF TM TeleQueue Contacts,5530,599
+OTH_1802_All_All_All_ANA_TA_LAB_TAVoucher,5554,18400
+eNewsletter - Contact Selection,5562,5688
+ENQ_XXXX_All_All_All_All_All_All_Pre-Dormant Selection_Pilot,5578,18435
+Alexandra_Control Print Academia Life Science Original,5583,5829
+Alexandra_Control Print Academia Chemistry Physics Original,5585,5829
+GLF-PGM-LegalBasisAssignment-FeedContactsLegitimateInterest,5734,5888
+GLF-PGM-InactivatePrivateEmailsGDPR-FeedContacts,5735,5888
+GLF-SYS-LegalBasisAssignment-BlankLegitimateInterest,5756,5888
+GLF-PGM-InactivateDACH-ReactivateIfNewIndustry,5758,5888
+MPL_1707_All_All_All_All_All_All_SRYNurt,2320,10371
+Contacts PPT Welcome,2779,14024
+Contacts CHE Nurturing,2785,14025
+Append_Function_MissingValues_Monthly,3574,13339
+Append_IndustryCodes_Check_Quarterly,3997,13339
+To reactivate contacts,4265,18914
+SYSTEM - Click Tracking,4296,16224
+TeleQueue - New Contacts,4550,17073
+topKA_monthly Dashboard,4658,6960
+topKA_monthly Dashboard_contacts added by addition date,4660,6960
+TeleQueue Feeder Clean,4859,17073
+OTH_1709_All_All_All_All_All_All_topKAtmFollow-up,5096,15797
+Export_topKA_OF,5275,5799
+Append_General_GNF_Monthly_InfoGlobalData,5464,13339
+TeleQueue Template,5470,13413

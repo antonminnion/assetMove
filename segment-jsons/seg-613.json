@@ -1,0 +1,171 @@
+{
+  "type": "ContactSegment",
+  "currentStatus": "Draft",
+  "depth": "complete",
+  "folderId": "1463",
+  "name": "SYSTEM - Append Hard Bouncebacks",
+  "permissions": [
+    "Retrieve",
+    "SetSecurity",
+    "Delete",
+    "Update"
+  ],
+  "updatedAt": "1530519702",
+  "updatedBy": "66",
+  "elements": [
+    {
+      "type": "ContactFilterSegmentElement",
+      "id": "1296",
+      "depth": "complete",
+      "count": "108452",
+      "isIncluded": "true",
+      "lastCalculatedAt": "1378284232",
+      "filter": {
+        "type": "ContactFilter",
+        "currentStatus": "Draft",
+        "id": "114154",
+        "createdAt": "1370412404",
+        "createdBy": "27",
+        "depth": "complete",
+        "folderId": "255",
+        "name": "SYSTEM - Append Hard Bouncebacks",
+        "permissions": [
+          "Retrieve",
+          "SetSecurity",
+          "Delete",
+          "Update"
+        ],
+        "updatedAt": "1530519702",
+        "updatedBy": "66",
+        "criteria": [
+          {
+            "type": "HardBouncebackCriterion",
+            "id": "301717",
+            "hasStatus": "True",
+            "timeRestriction": {
+              "type": "DateRangeCondition",
+              "end": {
+                "type": "AbsoluteDate",
+                "seconds": "1530482340"
+              },
+              "operator": "between",
+              "start": {
+                "type": "AbsoluteDate",
+                "seconds": "1529877600"
+              }
+            }
+          },
+          {
+            "type": "EmailSentCriterion",
+            "id": "303737",
+            "activityRestriction": {
+              "type": "NumericValueCondition",
+              "operator": "notLess",
+              "value": "1"
+            },
+            "timeRestriction": {
+              "type": "DateValueCondition",
+              "operator": "withinLast",
+              "value": {
+                "type": "RelativeDate",
+                "offset": "12",
+                "timePeriod": "month"
+              }
+            }
+          },
+          {
+            "type": "ContactFieldCriterion",
+            "id": "362001",
+            "condition": {
+              "type": "TextValueCondition",
+              "operator": "equal",
+              "value": "Hard_bounce"
+            },
+            "fieldId": "100090"
+          },
+          {
+            "type": "LinkedCustomObjectCriterion",
+            "id": "362002",
+            "customObjectId": "318",
+            "fieldConditions": [
+              {
+                "type": "FieldCondition",
+                "id": "373589",
+                "condition": {
+                  "type": "DateRangeCondition",
+                  "end": {
+                    "type": "AbsoluteDate",
+                    "seconds": "1530482340"
+                  },
+                  "operator": "between",
+                  "start": {
+                    "type": "AbsoluteDate",
+                    "seconds": "1529877600"
+                  }
+                },
+                "fieldId": "1000"
+              }
+            ]
+          }
+        ],
+        "scope": "global",
+        "statement": "(301717 AND 303737) OR (362001 AND 362002)"
+      }
+    },
+    {
+      "type": "ContactFilterSegmentElement",
+      "id": "14479",
+      "depth": "complete",
+      "count": "745",
+      "isIncluded": "false",
+      "lastCalculatedAt": "1480357593",
+      "filter": {
+        "type": "ContactFilter",
+        "currentStatus": "Draft",
+        "id": "124043",
+        "createdAt": "1480357593",
+        "createdBy": "48",
+        "depth": "complete",
+        "folderId": "51",
+        "name": "Appended with AL in 2016",
+        "permissions": [
+          "Retrieve",
+          "SetSecurity",
+          "Delete",
+          "Update"
+        ],
+        "updatedAt": "1530519702",
+        "updatedBy": "66",
+        "criteria": [
+          {
+            "type": "LinkedCustomObjectCriterion",
+            "id": "-364958",
+            "customObjectId": "320",
+            "fieldConditions": [
+              {
+                "type": "FieldCondition",
+                "id": "370412",
+                "condition": {
+                  "type": "DateRangeCondition",
+                  "end": {
+                    "type": "AbsoluteDate",
+                    "seconds": "1484002740"
+                  },
+                  "operator": "between",
+                  "start": {
+                    "type": "AbsoluteDate",
+                    "seconds": "1451602800"
+                  }
+                },
+                "fieldId": "1062"
+              }
+            ]
+          }
+        ],
+        "scope": "local",
+        "statement": "-364958"
+      }
+    }
+  ],
+  "isStale": "True"
+}

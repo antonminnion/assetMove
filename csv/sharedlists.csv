@@ -1,0 +1,398 @@
+name,id,folderId
+SYSTEM - competitor A-B,100037,337
+SYSTEM - competitor C-F,100038,337
+SYSTEM - competitor G-M,100039,337
+SYSTEM - competitor N-R,100040,337
+SYSTEM - competitor S-W,100041,337
+SYSTEM - competitor X-Z,100042,337
+SYSTEM - competitor A-B II,100067,337
+SYSTEM - competitor C-F II,100080,337
+SYSTEM - competitor G-M II,100081,337
+SYSTEM - competitor G-M III,100082,337
+SYSTEM - competitor N-R II,100083,337
+SYSTEM - competitor S-W II,100085,337
+SYSTEM - competitor S-W III,100086,337
+SYSTEM - France no-call A-B II,100230,338
+SYSTEM - France no-call A-B IV,100232,338
+SYSTEM - France no-call C-F,100233,338
+SYSTEM - France no-call C-F II,100234,338
+SYSTEM - France no-call N-Y II,100238,338
+SYSTEM - France no-call N-Y III,100239,338
+Received email last 3 weeks,100399,5882
+SYSTEM - UK for NO call list programme,100524,255
+SYSTEM - No call,100956,529
+University of Cambridge - Pharmacology,101136,738
+Technische Universität München in Freising,101158,337
+SYSTEM - Inactivate_Private emails Germany,101211,337
+SYSTEM - competitor A-B III,101241,337
+SYSTEM - competitor A-B IV,101243,337
+Unsubscribe_companies,101387,337
+TM_cold_leads,101393,397
+SYSTEM - Wrong countries to normalize or no ISO Country,102062,581
+SYSTEM - eLeads_of_the_month,102266,397
+IND_KeyWords_Tagging,102631,6849
+PRO_KeyWords_Tagging,102632,6849
+PI_KeyWords_Tagging,102634,6849
+NIH Address,102750,738
+Tierklinik de Universität Leipzig,102800,738
+SYSTEM - unsubscribed for programme,102901,255
+SYSTEM - Contacts not valid for eLead Tagging,104252,533
+unsubscribe MT contact,104721,337
+System - Inactivate CN Nankai University,104875,8573
+SYSTEM - Feeder programme Normalize Company Names - Academia US,105027,255
+System - Exclude from E-Mails,105065,8568
+SYSTEM - Competitors/Dealers France domain,105069,337
+SYSTEM - Feeder programme inactivate Competitors/Dealers FR,105073,337
+SYSTEM - Submitted Survey L12M with Wkp,105124,13325
+ANA_KeyWords_Tagging,105361,6849
+System - Nurturing with APP1 Score,105450,18650
+SYSTEM - Inactivate Astellas Pharma,105759,738
+SYSTEM - Inactivate Chemgenex AUS,105771,738
+System - Academia and Science industry segment (L3) Tagged_contact,107171,255
+SYSTEM - Inactivate Statlistics,107363,8573
+SYSTEM - Inactivate GreatLists,107364,8573
+SYSTEM - Inactivate Advanstar,107365,8573
+SYSTEM - Inactivate Pinpoint,107369,8573
+SYSTEM - Visited Website Last Day,107420,1259
+SYSTEM - Blocked Countries,108223,8573
+System - Current Selected in Campaign,108478,1918
+SYSTEM - Inactivate Pubmed Finland,109151,8573
+Contact is in Second Brand Unsubscribed Group,109507,1595
+Contact is in Third Brand Unsubscribed Group,109508,1595
+Adhoc - starting filter,109923,1900
+SYSTEM - Inactivate Hard_bounces,109979,8573
+System - eNews_Generic_WP_Labs,110815,255
+System - eNews_Generic_WP_Not_Labs,110816,255
+"SYSTEM – Area Code Cleanser (Zip, no City)",111053,2365
+"SYSTEM – Area Code Cleanser (City, no Zip)",111054,2365
+SYSTEM – Area Code Cleanser (US),111056,2365
+SYSTEM – Area Code Cleanser (DE),111058,2365
+SYSTEM – Area Code Cleanser (CA),111059,2365
+SYSTEM – Area Code Cleanser (CN),111060,2365
+SYSTEM – Area Code Cleanser (FR),111061,2365
+SYSTEM – Area Code Cleanser (IN),111062,2365
+SYSTEM – Area Code Cleanser (JP),111063,2365
+SYSTEM – Area Code Cleanser (IT),111064,2365
+SYSTEM - ACH Email Received,111155,18643
+SYSTEM - TA Email Received,111158,18643
+SYSTEM - PIP Email Received,111164,18643
+SYSTEM - LWE Email Received,111165,18643
+unsubscribe_companies 3,112446,8573
+SYSTEM - Split Selection_Rating 1/2/3,113520,6483
+SYSTEM - Scoring Have Application?,114061,2148
+Regional split - AP,114437,5420
+Regional split - ROW,114439,5420
+SYSTEM - LAB Adhocs AP West,114508,8570
+SYSTEM - LAB Adhocs AP East,114647,8570
+Regional split - NA,114734,5420
+Regional split - Canada (French),114765,5420
+Regional split - Canada (English),114766,5420
+Regional split - AU/NZ,114804,5420
+PRO_USA_Contacts,114932,5902
+SYSTEM - Company Name = Procter and Gamble,115453,6410
+SYSTEM - Feeder Inactivate Not Covered Countries,115513,8573
+SYSTEM - App1 IND FAB,115515,6459
+SYSTEM - App1 IND CHE/PAB,115516,6459
+SYSTEM - App1 IND OEM,115517,6459
+SYSTEM - Campaign - Received TLA email,115547,6483
+SYSTEM - Campaign - Received IND email,115548,6483
+SYSTEM - Campaign - Received PRO email,115549,6483
+SYSTEM - Campaign - Received PI email,115584,6483
+SYSTEM - Feeder LAB Application Program,115605,18487
+SYSTEM - IWAP Microelectronics Updated Contacts,115668,1259
+EMT_EMK_1401_MPE_QC/PAF_PI_All_All_Nurt1,115705,6748
+EMT_EMK_1401_MPE_All_PRO_All_All_Nurt1,115706,6748
+EMT_EMK_1401_MPE_RAD/LAB_LAB_All_All_Nurt1,115707,6748
+EMT_EMK_1401_MPE_EPD_IND_All_All_Nurt1,115709,6748
+EMT_EMK_1401_MPE_LSM_IND_All_All_Nurt1,115710,6748
+EMT_EMK_1401_MPE_All_IND_All_All_Nurt1,115712,6748
+SYSTEM - Company Name = Becton Dickinson,115939,6410
+SYSTEM - Company Name = British Petroleum,115940,6410
+SYSTEM - Apply Date of Inactivation,116453,1259
+EMT_EMK_1406_All_PAB_LAB_Welcome,116964,1918
+SYSTEM - CASL Active,117041,7737
+SYSTEM - CASL Inactive,117042,7737
+SYSTEM - CASL Explicit Consent,117043,7737
+SYSTEM - CASL Implied Requested Information,117044,7737
+SYSTEM - Implied Business Relationshipt,117045,7737
+SYSTEM - CASL Opt-in Last 6 Months,117046,7737
+SYSTEM - Active TLH Industry Program,117066,8574
+SYSTEM - Active AAE US Industry Program,117067,8574
+SYSTEM - Active AAE Non-US Industry Program,117068,8574
+SYSTEM - Active Non AAE & TLH Industry Program,117069,8574
+SYSTEM - Date of Inactivation Not Inactive Anymore,117353,489
+SYSTEM - Irrelevant Workplaces Contacts,117486,8573
+SYSTEM - Company Name = Shell,117883,6410
+SYSTEM - Company Name = Dow Chemical,117884,6410
+SYSTEM - German Competitors Feeder,117977,256
+SYSTEM - Assign App1 and App2 for Article Title and Journal,117997,1259
+SYSTEM - Assigned App1_ACH due to I3W - Marta,118060,8604
+SYSTEM - Competitor/Partner Domain List,118293,337
+System - Active_Nurturing_contacts,118473,18650
+SYSTEM - Competitor Domains GNF,118627,337
+SYSTEM - Phone Number Cleaning Phone 1 Non-Num Char,118733,9318
+SYSTEM - Phone Number Cleaning Phone 2 Non-Num Char,118734,9318
+Contacts with A3 score,118819,9598
+Contacts with A4 score,118820,9598
+Contacts with B1 score,118821,9598
+Contacts with B2 score,118822,9598
+Contacts with B3 score,118823,9598
+Contacts with B4 score,118824,9598
+Contacts with C1 score,118825,9598
+Contacts with C3 score,118827,9598
+Contacts with C4 score,118828,9598
+Contacts with D1 score,118829,9598
+Contacts with D2 score,118830,9598
+Contacts with D3 score,118831,9598
+Contacts with D4 score,118832,9598
+Lead Scoring - Active Contacts Feeder 1,118833,9599
+Lead Scoring - Active Contacts Feeder 2,118834,9599
+Lead Scoring - Active Contacts Feeder 3,118835,9599
+Lead Scoring - Active Contacts Feeder 4,118836,9599
+SYSTEM - PAB_Nurt_App1LAB,118840,7615
+SYSTEM - PAB_Nurt_App1Mnf,118841,7615
+SYSTEM - PAB_LAB_Nurt1_Received,118843,7615
+SYSTEM - PAB_Mnf_Nurt1_Received,118844,7615
+EMT_EMK_1503_All_EME_All_All_All_All_3Industrysubs,118921,9971
+SYSTEM - mt.com Contacts,118931,232
+SYSTEM - Phone Number Cleaning Phone1 Contains E+ # Ext x _,118991,9318
+SYSTEM - Phone Number Cleaning Phone2 Contains E+ # Ext x _,118992,9318
+SYSTEM - Exclude Company - complaint,118993,1918
+SYSTEM - Update Field Last Email Open,120636,1259
+SYSTEM - CHE Nurturing Email Open,120835,13222
+SYSTEM - FAB Nurturing Email Opened/Clicked?,120836,6911
+SYSTEM - CHE Welcome Opened/Clicked,120838,1918
+SYSTEM - Workplace Tagging Active With Job Function Without Wkp,120997,13325
+SYSTEM - Workplace Tagging Active AAE & TLH,120999,13325
+SYSTEM - Reactivation wrongly tagged TM contacts,121806,13937
+SYSTEM - Product Level 2 App1_ANA Sync,122045,14032
+SYSTEM - Product Level 2 App1_PIP Sync,122046,14032
+SYSTEM - Product Level 2 App1_ACH Sync,122047,14032
+SYSTEM - Product Level 2 App1_PRO Sync,122048,14032
+SYSTEM - Product Level 2 App1_PI Sync,122050,14032
+SYSTEM - Product Level 2 App1_TLA Sync,122051,14032
+SYSTEM - Country by Site Address,122235,14137
+SYSTEM - Zip or Postal Code by Company & Site Address,122237,14137
+SYSTEM - App1 not blank,122599,18499
+SYSTEM - Industry&Workplace Combinations for AdHoc,122656,18499
+SYSTEM - MPE EED PRO selection,122679,14691
+SYSTEM - EME Water Systems PRO selection,122680,14691
+SYSTEM - Feeder Contact Split Program for AdHoc - US,122682,18499
+SYSTEM - App1 PI priority selection,122685,18500
+SYSTEM - App1 IND priority selection,122686,18500
+SYSTEM - Feeder AdHoc not blank,122771,14691
+SYSTEM - Feeder Contact Split Program for AdHoc - non US,122772,18499
+SYSTEM - Feeder Application for Campaigns not blank,122786,14691
+Email address not validated so far or more than 1 year ago?,122854,14849
+SYSTEM - Website Trigger Campaign - ACH Page Tag Group,122915,10595
+SYSTEM - Website Trigger Campaign - PRO Page Tag Group,122930,10595
+SYSTEM - Website Trigger Campaign - TLA Page Tag Group,122932,10595
+SYSTEM - Website Trigger Campaign - PI Page Tag Group,122933,10595
+SYSTEM - Website Trigger Campaign - PIP Page Tag Group,122934,10595
+SYSTEM - Website Trigger Campaign - LWE Page Tag Group,122936,10595
+SYSTEM - Internal Append Feed Destination,123629,14137
+SYSTEM - CHE_PRO/IND/PI/LAB,123698,15759
+SYSTEM - CHE_PRO/LAB/IND/PI,123699,15759
+SYSTEM - CHE_IND/PI/PRO/LAB,123709,15759
+SYSTEM - CHE_PI/IND/PRO/LAB,123710,15759
+SYSTEM - NumOfEmployees by Company & Site Address,123776,14137
+SYSTEM - PAB_PRO/IND/PI/LAB,123802,15759
+SYSTEM - PAB_IND/PI/PRO/LAB,123803,15759
+SYSTEM - PAB_PRO/LAB/PI/IND-old filter,123805,18267
+SYSTEM - PAB_LAB/IND/PRO/PI,123806,15759
+SYSTEM - PAB_LAB/PI/PRO/IND-old filter,123807,18267
+SYSTEM - MPE_PRO/IND/LAB/PI,123809,15759
+SYSTEM - FAB_IND/PI/LAB/PRO_Part1,123810,15759
+SYSTEM - FAB_PRO/PI/IND/LAB,123814,15759
+SYSTEM - FAB_IND/LAB/PI/PRO-old filter,123816,18267
+SYSTEM - FAB_PRO/PI/LAB/IND-old filter,123817,18267
+SYSTEM - Click Tracking Already Linked CDO,124251,16213
+20% split part1,124449,14279
+20% split part 2,124450,14279
+20% split part 4,124452,14279
+20% split part 5,124453,14279
+SYSTEM - 2017 Dormant Clicked any email,124672,16520
+SYSTEM - Welcome TopKA not yet received,124825,1918
+SYSTEM - Welcome FAB not yet received,124826,1918
+SYSTEM - Welcome PAB not yet received,124830,1918
+SYSTEM - Welcome TLH not yet received,124831,1918
+SYSTEM - Welcome EME not yet received,124835,1918
+SYSTEM - Welcome CHE not yet received,124836,1918
+SYSTEM - Welcome MPE not yet received,124837,1918
+SYSTEM - Welcome RAW not yet received,124838,1918
+SYSTEM - Welcome PPT not yet received,124839,1918
+SYSTEM - Welcome Generic not yet received,124841,1918
+SYSTEM - Nurturing AAE not yet received,124844,18650
+SYSTEM - Nurturing PAB not yet received,124846,18650
+SYSTEM - Nurturing TLH not yet received,124847,18650
+SYSTEM - Nurturing EME not yet received,124848,18650
+SYSTEM - Nurturing CHE not yet received,124849,18650
+SYSTEM - Nurturing MPE not yet received,124850,18650
+SYSTEM - Nurturing RAW not yet received,124851,18650
+SYSTEM - Nurturing TRA not yet received,124852,18650
+SYSTEM - Nurturing Generic not yet received,124853,18650
+SYSTEM - Nurturing PPT not yet received,124854,18650
+SYSTEM - Nurturing UTM not yet received,124857,18650
+TeleQueue - InProgress,125265,17105
+TeleQueue - New Contacts,125268,17105
+TeleQueue - Region America,125433,17105
+TeleQueue - Region EMEA,125434,17105
+TeleQueue - Region APAC,125435,17105
+Industry Exclusion,125498,400
+Workplace Exclusion,125499,400
+MT Email Groups_Have not been sent email within the last 2 weeks?,125552,16539
+MT Email Groups_Have not been sent email within the last 1 week?,125553,16539
+unsubscribe_companies 4,125737,8573
+MT Email Groups_Have not been sent email within the last 4 weeks?,126002,16539
+SYSTEM - 2017 Dormant Submitted Both Forms,126115,16520
+Adhoc Campaign Split - Odd,126166,16539
+Adhoc Campaign Split - Even,126167,16539
+SYSTEM - Website Visit Trigger_PIP_AlreadyReceived,126517,10595
+SYSTEM - Website Visit Trigger_LWE_AlreadyReceived,126518,10595
+SYSTEM - Website Visit Trigger_ANA_AlreadyReceived,126520,10595
+SYSTEM - Website Visit Trigger_LAB_AlreadyReceived,126521,10595
+SYSTEM - No call - TM_CCP,126724,529
+SYSTEM - Unsubscribed Contacts,126813,51
+SYSTEM - ISIC by Company & Site Address,126862,14137
+SYSTEM - NACE by Company & Site Address,126863,14137
+SYSTEM - Irrelevant Workplaces based on job title 1,127010,51
+SYSTEM - EME Welcome Opened/Clicked,127283,1918
+INDx_Have not been sent email within 3 weeks?,127424,18062
+INDx_Have not been sent email within 2 weeks?,127426,18062
+Eagle_Have not been sent email within 3 weeks?,127448,18953
+SYSTEM - GNF Cold Leads BUname AutoChem,127517,18142
+SYSTEM - GNF Cold Leads BUname LAB_ANA,127519,18142
+SYSTEM - GNF Cold Leads BUname IND,127521,18142
+SYSTEM - GNF Cold Leads BUname LAB_WGH,127523,18142
+SYSTEM - GNF Cold Leads BUname PI,127526,18142
+SYSTEM - GNF Cold Leads BUname PIP,127528,18142
+SYSTEM - GNF Cold Leads BUname PRO,127531,18142
+SYSTEM - PWG Welcome Opened/Clicked,127700,1918
+SYSTEM - Welcome PWG not yet received,127702,1918
+SYSTEM - CHE_IND/PRO/PI/LAB-New,127708,15759
+SYSTEM - CHE_IND/PRO/LAB/PI-New,127709,15759
+SYSTEM - PAB_PRO/IND/LAB/PI-New,127710,15759
+SYSTEM - PAB_IND/LAB/PI/PRO-New,127711,15759
+SYSTEM - PAB_PRO/PI/IND/LAB-New,127712,15759
+SYSTEM - Wrong topKA names,127818,938
+SYSTEM - FAB_IND/PI/LAB/PRO_Part2,127970,15759
+TM_Status exclude,128045,400
+SYSTEM - Welcome & Nurturing LAB Workplaces,128068,51
+USA Mountain and Pacific Standard Time States,128089,18407
+Asia Eastern Regions,128090,18407
+Master ID - Split 3 Days Part 1,128224,18493
+2018_Pre-Dormant_App1_LAB,128243,18445
+2018_Pre-Dormant_App1_Check,128245,18445
+2018_Pre-Dormant_App1_Non LAB,128246,18445
+2018_Pre-Dormant_EvaluationCampaign_Clicked NRT/Submitted Form,128255,18445
+2018_Pre-Dormant_Email Survey Sent,128258,18445
+2018-1 eNews Selected Campaigns To Be Removed,128279,18531
+eNews - Eloqua ID ends in 2 and 3,128282,14645
+eNews - Eloqua ID ends in 4 and 5,128283,14645
+eNews - Eloqua ID ends in 6 and 7,128284,14645
+eNews - Eloqua ID Week 2 Selection,128286,14645
+eNews - Eloqua ID Week 3 Selection,128287,14645
+eNews - Eloqua ID Week 4 Selection,128288,14645
+SYSTEM - PPT Welcome Opened/Clicked,128297,1918
+SYSTEM - EU + UK + CH Countries,128321,6410
+Ascension Day Countries,128365,18407
+GLF-CPM-Nurturing MPE-IND,128621,18726
+GLF-CPM-Nurturing MPE-TLA,128622,18726
+GLF-CPM-Nurturing MPE-PRO,128623,18726
+GLF-CPM-Nurturing MPE-PI,128625,18726
+GLF-CPM-Nurturing MPE-EPD,128626,18726
+GLF-CPM-Website Trigger-GDPR Legitimate Interest,128658,10595
+GLF-PGM-InactivatePrivateEmailsGDPR-FeedContacts1,128814,255
+GLF-PGM-InactivatePrivateEmailsGDPR-FeedContacts2,128815,255
+SYSTEM - Spanish South America,114645,8570
+SYSTEM - Adhoc NA,115308,1900
+EMT_EMK_1401_MPE_All_LAB_All_All_Nurt1,115708,6748
+EMT_EMK_1401_MPE_RAW_IND_All_All_Nurt1,115711,6748
+SYSTEM - CASL Opt-in Last 2 Years,117047,7737
+Phone1_Phone2_NotBlank,117449,6911
+SYSTEM - Company Name = Yara,117889,6410
+Contacts with A1 score,118817,9598
+unsubscribe_companies 4_old,119211,8573
+SYSTEM - Workplace Tagging Active Non AAE & TLH,120998,13325
+SYSTEM - Product Level 2 App1 Sync,122043,14032
+SYSTEM - Product Level 2 App1_LWE Sync,122044,14032
+SYSTEM - City by Site Address,122233,14137
+SYSTEM - Company by Site Address,122234,14137
+SYSTEM - App1 LAB,122598,18500
+Addition Date Last 1 Hour,122601,18499
+SYSTEM - App1 TLA priority selection,122687,18500
+SYSTEM - PAB_PI/IND/PRO/LAB,123804,15759
+SYSTEM - MPE_IND/PRO/LAB/PI,123808,15759
+SYSTEM - FAB_PRO/IND/PI/LAB,123811,15759
+20% split part 3,124451,14279
+SYSTEM - Nurturing FAB not yet received,124845,18650
+SYSTEM - Website Visit Trigger_ACH_AlreadyReceived,126519,10595
+SYSTEM - Exclude Irrelevant Workplace (Procurement),126811,1259
+SYSTEM - No printed mailer Henkel St. Louis,127441,738
+Eagle_Have not been sent email within 2 weeks?,127450,18953
+SYSTEM - GNF Cold Leads BUname TLA,127533,18142
+eNews Laboratory Workplaces,127565,14645
+SYSTEM - FAB_PI/LAB/PRO/IND-New,127713,15759
+eNews - Eloqua ID ends in 0 and 1,128281,14645
+eNews - Eloqua ID ends in 8 and 9,128285,14645
+SYSTEM - FAB Welcome Opened/Clicked,128408,1918
+GLF-PGM-LegalBasisAssignment-FeedContactsLegitimateInterest,128813,5787
+System - Active_welcome_contacts(AddedLast3Months + notsend1yr),109214,1918
+SYSTEM – Area Code Cleanser (GB),111057,2365
+SYSTEM - Inactivate selected companies DE 2,111978,8573
+SYSTEM - France no-call A-B,100228,338
+SYSTEM - France no-call A-B III,100231,338
+SYSTEM - France no-call G-M,100235,338
+SYSTEM - France no-call N-Y,100237,338
+Convert reason for inactive into inactive,100585,255
+LAB_KeyWords_Tagging,102633,6849
+SYSTEM - Inactivate Bioinformatic,105841,8573
+SYSTEM - Inactivate Dunhill,107367,8573
+SYSTEM - Inactivate selected companies DE,111916,8573
+Received email last 1 hour?,113335,577
+SYSTEM - LAB Adhocs French Canada,114644,8570
+SYSTEM - Portuguese South America,114646,8570
+PRO_AP_Contacts,114933,5902
+System - TM_US/CAN/UK/AUS_selection,117416,1918
+Contacts with A2 score,118818,9598
+Contacts with C2 score,118826,9598
+Lead Scoring - Active Contacts Feeder 5,118837,9599
+SYSTEM - Inactivating Contacts with workplace Others,121001,13325
+SYSTEM - Product Level 2 App1_IND Sync,122049,14032
+SYSTEM - USA States by Zip Code,122056,14036
+SYSTEM - Canada States by Zip Code,122057,14036
+Open any email w/n 1 year?,122174,577
+SYSTEM - Address by Company & Site Address,122232,14137
+SYSTEM - Phone2 by Company & Site Address,122236,14137
+Received Website Trigger Email within last 2 days,122517,10595
+SYSTEM - Overlapping Workplaces,122649,18499
+SYSTEM - LAB Workplaces,122659,14691
+SYSTEM - App1 PRO priority selection,122684,18500
+SYSTEM - Website Trigger Campaign - IND Page Tag Group,122931,10595
+SYSTEM - Website Trigger Campaign - ANA Page Tag Group,122935,10595
+SYSTEM - CHE_LAB/PRO/IND/PI,123701,15759
+SYSTEM - PAB_IND/PRO/PI/LAB,123711,15759
+SYSTEM - FAB_PI/LAB/IND/PRO,123812,15759
+SYSTEM - FAB_PI/IND/LAB/PRO,123813,15759
+SYSTEM - FAB_LAB/IND/PI/PRO,123815,15759
+SYSTEM - 2017 Dormant Opened any email,124673,16520
+SYSTEM - Welcome AAE not yet received,124824,1918
+SYSTEM - Welcome TRA not yet received,124840,1918
+MT Email Groups_Have not been sent email within the last 3 weeks?,125548,16539
+SYSTEM - 2017 Dormant Unsubscribed,125660,16520
+"SYSTEM - 2017 Dormant - Submitted Form ""Yes""",126126,16520
+eNews A/B Test Split,126168,14645
+eNews Non-Laboratory Workplaces,127566,14645
+GLF-CPM-Nurturing MPE-LAB,128624,18726
+SYSTEM - Irrelevant Workplaces based on job title 2,128880,51
+System - Source: Not Bioport/Not IFS/NotSQFI,109058,1918
+Received email last 1 hour?,113335,577
+SYSTEM - LAB Adhocs French Canada,114644,8570
+SYSTEM - Portuguese South America,114646,8570
+PRO_AP_Contacts,114933,5902
+SYSTEM - France no-call G-M II,100236,338
+SYSTEM - France no-call N-Y IV,100240,338
+SYSTEM - competitor others+ unsubscribe,101140,337
+SYSTEM - competitor S-W IV,101245,337
+ACH_KeyWords_Tagging,105362,6849
+SYSTEM - Irrelevant Workplaces,107295,8573
