@@ -524,9 +524,15 @@ function runReport(id, res) {
             console.log(" - FIND MATCHES");
 
 
-            var regex = new RegExp(/src\s*=\s*"(.+?)"/gimu);
+            var regex = /src\s*=\s*"(.+?)"/gimu;
 
+
+            console.log(regex);
             console.log(regex.test('src="gsdhhdsgdsgh"'));
+
+
+
+            console.log(mat);
 
             console.log(html);
 
