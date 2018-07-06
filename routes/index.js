@@ -10,9 +10,16 @@ var fields = require('../classes/fields');
 
 var segments = require('../classes/segments');
 var segments2 = require('../classes/segments2');
-var writeFile = require('write');
 
-var Regex = require('regex');
+var fs = require('fs');
+
+var csv = require('fast-csv');
+
+var writeFile = require('write');
+var _ = require('lodash');
+
+
+
 
 
 var validEntityArray = [];
@@ -23,8 +30,36 @@ var running = false;
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('index', {title: 'BP Asset Move'});
+
+
+
+    var json = {};
+
+    json.list = [];
+
+
+    var count = 0;
+
+    fs.createReadStream("./csv/emails.csv")
+        .pipe(csv())
+        .on("data", function(data){
+
+            json.list.push(data);
+
+
+        })
+        .on("end", function(){
+
+            console.log(json.list);
+            res.render('index', {title: 'BP Asset Move', data: json.list});
+        });
+
+
+
+
 });
+
+//http://s1103.t.eloqua.com/e/f2?elqFormName=EMT_EMK_XXXX_All_All_All_All_All_All_ClickTrack&elqSiteID=1103&Link=A&SBU=IND%20TLA&Content=VEH-Maintenance-WPP-NTR1&URL=https://www.mt.com/global/en/home/library/white-papers/transport-logistics/VEH_Maintenance_WP.html?cmp=em-glf_GLO_eMail_TRANS_NRT_VEH-Maintenance-WPP-NTR1_20180411&emailAddress=~~eloqua..type--emailfield..syntax--EmailAddress..innerText--EmailAddress..encodeFor--url~~&elqTrackId=06cf7213bc714f8f94dbdb40cad96c10&elqTrack=true
 
 
 
@@ -500,90 +535,131 @@ function runReport(id, res) {
         json: true // Automatically parses the JSON string in the response
     };
 
+    options.simple = false;
+
     rp(options)
 
         .then(function (repos) {
 
-            console.log("-RP CALL SUCCESS");
+
+
+            if(repos) {
+
+
+                var html = "";
+
+
+                if (repos.htmlContent.html) {
+
+                    html = repos.htmlContent.html;
+                } else {
+
+                    html = repos.htmlContent.htmlBody;
+                }
+
+
+                console.log(" - FIND MATCHES");
+
+
+                var regex = /src\s*=\s*"(.+?)"/g;
+
+
+                console.log(regex);
+                console.log(regex.test('src="gsdhhdsgdsgh"'));
+
+
+                html = html.replace(regex, function (match) {
+
+                    //console.log("- - - MATCH", match);
+
+                    match = match.replace('{', '%7b');
+                    match = match.replace('}', '%7d');
+
+                    console.log(match);
+
+                    return match.toLowerCase();
+
+                });
+
+                var mat = html.match(regex);
+
+
+                console.log("--CHECKS");
+
+                for (var i = 0; i < mat.length; i++) {
+
+                    console.log("- " + i);
+
+                    mat[i] = mat[i].replace('src=', '');
+                    mat[i] = mat[i].substring(1, mat[i].length - 1);
+                    mat[i] = mat[i].toLowerCase();
+
+
+                }
+
+
+                mat = _.uniq(mat);
+
+
+                console.log("ATTEMPT MATCHES", mat);
+
+                var matches = images.runBatch(mat);
+
+
+                var fieldMerges = false;
+
+                if (html.search('<span class=eloquaemail') > 0) {
+
+                    fieldMerges = true;
+
+                }
+
+                var html2 = html;
+
+                for (var m = 0; m < matches.elements.length; m++) {
+
+
+                    console.log();
+                    html2 = html2.replace(matches.elements[m].source.toLowerCase(), matches.elements[m].replacement);
+                    console.log("REPLACE\n", matches.elements[m].source.toLowerCase(), matches.elements[m].replacement);
+
+
+                }
+
+
+
+                html2 = html2.replace("<span class=eloquaemail >Department1</span>","<span class=eloquaemail >Division1</span>");
 
 
 
 
+                res.render('emailReport', {
+                    links: matches,
+                    html: html,
+                    html2: html2,
+                    fm: fieldMerges,
+                    name: repos.name,
+                    reply_to: repos.reply_to,
+                    subject: repos.subject,
+                    folderId: repos.folderId
+                });
 
-            var html = "";
+
+                running = false;
 
 
-            if (repos.htmlContent.html) {
+                matches = {};
+                html = "";
 
-                html = repos.htmlContent.html;
-            } else {
 
-                html = repos.htmlContent.htmlBody;
+            }else{
+
+
+                res.send("<p>NOT FOUND</p>");
+
+                this.cancel();
+
             }
-
-
-
-            console.log(" - FIND MATCHES");
-
-
-            var regex = /src\s*=\s*"(.+?)"/g;
-
-
-            console.log(regex);
-            console.log(regex.test('src="gsdhhdsgdsgh"'));
-
-
-            html = html.replace(regex, function (match) {
-
-                //console.log("- - - MATCH", match);
-
-                match = match.replace('{','%7b');
-                match = match.replace('}','%7d');
-
-                console.log(match);
-
-                return match.toLowerCase();
-
-        });
-
-            var mat = html.match(regex);
-
-
-            console.log("--CHECKS");
-
-            for (var i = 0; i < mat.length; i++) {
-
-                console.log("- "+ i);
-
-                mat[i] = mat[i].replace('src=', '');
-                mat[i] = mat[i].substring(1, mat[i].length - 1);
-                mat[i] = mat[i].toLowerCase();
-
-
-            }
-
-            console.log("ATTEMPT MATCHES", mat);
-
-            var matches = images.runBatch(mat);
-
-
-            var fieldMerges = false;
-
-            if (html.search('<span class=eloquaemail') > 0) {
-
-                fieldMerges = true;
-
-            }
-
-
-            res.render('emailReport', {links: matches, html: html, fm: fieldMerges});
-
-
-            running = false;
-
-
-            matches = {};
-            html = "";
 
 
         }).catch(function (err) {

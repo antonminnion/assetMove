@@ -1,41 +1,66 @@
 extends layout
 
 block content
-  h3 Processing Email
-  table.table
-    thead.thead-dark
-      tr
-        th(scope='col') #
-        th(scope='col') Property
-        th(scope='col') Value
-    tbody
-      tr
-        th(scope='col') #
-        th(scope='col') Field Merges?
-        th(scope='col') #{fm}
+  .mt-5.col-md-12
+  h3.text-center Email Report
+  .mt-5.col-md-12
+  .row
+    .col-md-1
+    .col-md-10
+      table.table.table-sm
+        thead.thead-dark
+          tr
+            th(scope='col') Property
+            th(scope='col') Value
+        tbody
+          tr
+            td(scope='col') Name
+            td(scope='col') #{name}
+          tr
+            td(scope='col') Subject
+            td(scope='col') #{subject}
+          tr
+            td(scope='col') Reply to email:
+            td(scope='col') #{reply_to}
+          tr
+            td(scope='col') Field Merges?
+            td(scope='col') #{fm}
 
 
-  table.table
-    thead.thead-dark
-      tr
-        th(scope='col') #
-        th(scope='col') Source
-        th(scope='col') Replacement
-    tbody
+
+      table.table.table-sm
+        thead.thead-dark
+          tr
+            th(scope='col') #
+            th(scope='col') Source
+            th(scope='col') Replacement
+        tbody
 
 
 
 
-    each ll, index in links.elements
-      tr
-        th(scope='row')=index
-        td=ll.source
-        td=ll.replacement
+        each ll, index in links.elements
+          tr
+            th(scope='row')=index
+            td=ll.source
+            td=ll.replacement
+    .col-md-1
 
-  .card(style='width: 100%;')
-    .card-body
-      h5.card-title Email Preview
-      samp.card-text
-        | !{html}
+  .mt-8.col-md-12
+  .row
+    .col-md-1
+    .col-md-5(style='text-align:-webkit-center')
+      .card(style='width: 100%;')
+        .card-body
+          h5.card-title Email Source
+          samp.card-text
+            | !{html}
+    .col-md-5(style='text-align:-webkit-center')
+      .card(style='width: 100%;')
+        .card-body
+          h5.card-title Email Target
+          samp.card-text
+            | !{html2}
+     .col-md-1
 
 

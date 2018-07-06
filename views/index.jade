@@ -1,43 +1,26 @@
 extends layout
 
 block content
-  h3 Processing Email
-  table.table
-    thead.thead-dark
-      tr
-        th(scope='col') #
-        th(scope='col') Property
-        th(scope='col') Value
-    tbody
-      tr
-        th(scope='row') 1
-        td Name
-        td #{name}
-      tr
-        th(scope='row') 2
-        td Footer ID
-        td #{footerId}
+  h3 #{title}
+  select.biglist
 
-      tr
-        th(scope='row') 3
-        td Header ID
-        td #{headerId}
+    - for (var i = 0; i < data.length; i++) {
+      option(value=data[i][1])= data[i][0]
+    - }
+  a#goto GENERATE REPORT
 
-      tr
-        th(scope='row') 4
-        td Email Group
-        td #{emailGroupId}
-      tr
-        th(scope='row') 5
-        td Subject
-        td #{subject}
+script.
+    $( document ).ready(function() {
+        $('.biglist').on("change",function(){
+            console.log("gdghdsh");
+        });
+    });
 
 
 
-  .card(style='width: 100%;')
-    .card-body
-      h5.card-title HTML
-      samp.card-text
-        | #{htmlContent}
+
+
+
+
 
 

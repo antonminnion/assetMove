@@ -7,6 +7,8 @@ var i6 = require('./images-6');
 var i7 = require('./images-7');
 var i8 = require('./images-8');
 
+var _ = require('lodash');
+
 var mod = {};
 
 
@@ -49,6 +51,8 @@ mod.runMatches = function(ref, arr){
 
 
 
+
+
     for(var i = 0; i < arr.length; i++){
 
         count++;
@@ -60,6 +64,8 @@ mod.runMatches = function(ref, arr){
             if(arr[i][0].toLowerCase() == ref[k].toLowerCase()){
 
                console.log("Matches: " + ref[k]);
+
+
 
                 imageMatches.elements.push({source: arr[i][0], replacement: arr[i][1]});
             }
