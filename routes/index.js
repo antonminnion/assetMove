@@ -517,9 +517,15 @@ function runReport(id, res) {
             }
 
 
+
+            console.log(" - FIND MATCHES");
+
+
             var regex = new RegExp(/src\s*=\s*"(.+?)"/gimu);
 
             var mat = html.match(regex);
+
+
 
             html = html.replace(regex, function (match) {
                 return match.toLowerCase();
