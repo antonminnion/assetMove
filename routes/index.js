@@ -506,6 +506,8 @@ function runReport(id, res) {
 
 
 
+
+
             var html = "";
 
 
@@ -521,22 +523,31 @@ function runReport(id, res) {
 
             console.log(" - FIND MATCHES");
 
-            console.log(RegExp);
 
-
-            var regex = new RegExp(/src\s*=\s*"(.+?)"/gimu);
+            var regex = /src\s*=\s*"(.+?)"/gimu;
 
             console.log(regex);
 
-            var mat = html.match(regex);
+
 
             console.log(mat);
 
+            console.log(html);
+
             html = html.replace(regex, function (match) {
 
-                console.log("- - - MATCH");
+                //console.log("- - - MATCH", match);
+
+                match = match.replace('{','%7b');
+                match = match.replace('}','%7d');
+
+                console.log(match);
+
                 return match.toLowerCase();
-            });
+
+        });
+
+            var mat = html.match(regex);
 
 
             console.log("--CHECKS");
