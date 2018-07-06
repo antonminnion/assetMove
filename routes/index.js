@@ -528,10 +528,6 @@ function runReport(id, res) {
 
             console.log(regex.test('src="gsdhhdsgdsgh"'));
 
-
-
-            console.log(mat);
-
             console.log(html);
 
             html = html.replace(regex, function (match) {
