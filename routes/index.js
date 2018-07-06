@@ -499,7 +499,10 @@ function runReport(id, res) {
     };
 
     rp(options)
+
         .then(function (repos) {
+
+            console.log("-RP CALL SUCCESS");
 
 
             var html = "";
