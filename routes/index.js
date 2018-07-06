@@ -530,6 +530,8 @@ function runReport(id, res) {
 
 
             html = html.replace(regex, function (match) {
+
+                console.log("- - - MATCH");
                 return match.toLowerCase();
             });
 
