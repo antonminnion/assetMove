@@ -504,7 +504,6 @@ function runReport(id, res) {
 
             console.log("-RP CALL SUCCESS");
 
-            console.log(repos);
 
 
             var html = "";
@@ -525,9 +524,11 @@ function runReport(id, res) {
 
             var regex = new RegExp(/src\s*=\s*"(.+?)"/gimu);
 
+            console.log(111);
+
             var mat = html.match(regex);
 
-
+            console.log(222);
 
             html = html.replace(regex, function (match) {
 
