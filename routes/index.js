@@ -7,15 +7,25 @@ var filters = require('../classes/filters');
 var writeCSV = require('write-csv');
 var images = require('../classes/images');
 var fields = require('../classes/fields');
+var folders = require('../classes/folders');
 
 var segments = require('../classes/segments');
 var segments2 = require('../classes/segments2');
+
+var emailGroups = require('../classes/emailGroups');
+
+var emailSwaps = require('../classes/emailSwaps');
 
 var fs = require('fs');
 
 var csv = require('fast-csv');
 
 var writeFile = require('write');
+
+
+var jsonFS = require('jsonfile');
+
+
 var _ = require('lodash');
 
 
@@ -32,6 +42,14 @@ var running = false;
 router.get('/', function (req, res, next) {
 
 
+    buildTable(res);
+
+
+
+});
+
+
+function buildTable(res) {
 
     var json = {};
 
@@ -42,22 +60,19 @@ router.get('/', function (req, res, next) {
 
     fs.createReadStream("./csv/emails.csv")
         .pipe(csv())
-        .on("data", function(data){
+        .on("data", function (data) {
 
             json.list.push(data);
 
 
         })
-        .on("end", function(){
+        .on("end", function () {
 
-            console.log(json.list);
+
             res.render('index', {title: 'BP Asset Move', data: json.list});
         });
 
-
-
-
-});
+}
 
 //http://s1103.t.eloqua.com/e/f2?elqFormName=EMT_EMK_XXXX_All_All_All_All_All_All_ClickTrack&elqSiteID=1103&Link=A&SBU=IND%20TLA&Content=VEH-Maintenance-WPP-NTR1&URL=https://www.mt.com/global/en/home/library/white-papers/transport-logistics/VEH_Maintenance_WP.html?cmp=em-glf_GLO_eMail_TRANS_NRT_VEH-Maintenance-WPP-NTR1_20180411&emailAddress=~~eloqua..type--emailfield..syntax--EmailAddress..innerText--EmailAddress..encodeFor--url~~&elqTrackId=06cf7213bc714f8f94dbdb40cad96c10&elqTrack=true
 
@@ -390,6 +405,59 @@ router.get('/emails/list/:writefile', function (req, res, next) {
 
 });
 
+router.get('/folders/list', function (req, res, next) {
+
+
+    var count = 0;
+
+    run(folders.elements);
+
+
+    console.log("CREATE FOLDERS--");
+    function run(elements){
+
+
+
+        var options = {
+            method: 'POST',
+            uri: 'https://secure.p06.eloqua.com/api/REST/2.0/assets/email/folder',
+
+            headers: {
+                'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOlQwdHRlbmhAbTE5NjE=',
+                'Content-Type': 'application/json'
+            },
+            body: {
+                "folderId": "1484",
+                "name": elements[count][1],
+            },
+            json: true // Automatically parses the JSON string in the response
+        };
+
+        rp(options)
+
+            .then(function (repos) {
+
+
+
+                console.log('"' + repos.name + '","' + repos.id+ '","' + elements[count][0]+ '","' +elements[count][1]+ '","' + elements[count][2] + '"');
+
+                count++;
+                if(count < elements.length){
+
+                    run(elements);
+
+                }
+
+
+            }).catch(function(err){
+
+                console.log(err);
+        });
+    }
+
+
+});
+
 
 router.get('/emails/report/:id', function (req, res, next) {
 
@@ -397,6 +465,30 @@ router.get('/emails/report/:id', function (req, res, next) {
     if (!running) {
         runReport(req.params.id, res);
     }
+
+
+});
+
+
+router.get('/emails/report/update/:id/:result', function (req, res, next) {
+
+
+    if(req.params.result == "Approve") {
+
+        console.log("APPROVED - " + req.params.id);
+
+        approveEmail(req.params.id,res);
+
+    }else{
+
+        console.log("FOR REVIEW - " + req.params.id);
+
+        reviewEmail(req.params.id,res);
+
+    }
+
+
+
 
 
 });
@@ -413,7 +505,258 @@ router.get('/fields/report/', function (req, res, next) {
 
 });
 
+
+
+function reviewEmail(id,res){
+
+
+    var file = 'email_reports/all/' + id + '.json';
+
+    var wfile = 'email_reports/for_review/' + id + '.json';
+
+    jsonFS.readFile(file, function(err, obj) {
+
+
+        jsonFS.writeFile(wfile, obj, function (err) {
+            console.error(err)
+        });
+
+    });
+
+
+
+
+    var csvWriteStream = csv.format({headers: true}),
+        writableStream = fs.createWriteStream("./csv/emails-temp.csv");
+
+    writableStream.on("finish", function(){
+        console.log("DONE!");
+    });
+
+    csvWriteStream.pipe(writableStream);
+
+    fs.createReadStream("./csv/emails.csv")
+        .pipe(csv())
+        .on("data", function (data) {
+
+            if(data[1] == id){
+
+                data[3] = 2;
+                csvWriteStream.write([data[0],data[1],data[2],data[3]]);
+            }else{
+
+                csvWriteStream.write([data[0],data[1],data[2],data[3]]);
+            }
+
+
+        })
+        .on("end", function () {
+
+
+            csvWriteStream.end();
+
+            fs.unlink('./csv/emails.csv', function(err) {
+                if (err) throw err;
+                console.log('successfully deleted /csv/emails.csv');
+            });
+
+            fs.rename('./csv/emails-temp.csv', './csv/emails.csv', function (err) {
+                if (err) throw err;
+                console.log('successfully renamed /csv/emails.csv');
+            });
+
+
+
+            res.send(200);
+
+        });
+
+}
+
+
+function approveEmail(ref,res){
+
+
+
+    var file = 'email_reports/all/' + ref + '.json';
+
+    var wfile = 'email_reports/approved/' + ref + '.json';
+
+    console.log("FINDING REPORT");
+    jsonFS.readFile(file, function(err, obj) {
+
+
+
+        var checkId = obj.folderId;
+        var headId  = obj.emailHeaderId;
+        var footId  = obj.emailFooterId;
+        var eGroup  = obj.emailGroupId;
+
+        console.log("CHECKID: " + checkId);
+
+       var jString = JSON.stringify(obj);
+
+
+
+        console.log('emailHeaderId":"' + headId + '"');
+       // set default header ID
+        jString = jString.replace('emailHeaderId":"' + headId + '"','emailHeaderId":"8"');
+
+        // set default footer ID
+        jString = jString.replace('emailFooterId":"' + footId + '"','emailFooterId":"10"');
+
+
+//TODO Email Group Transform
+
+
+
+
+
+
+        //swap emailGroups
+       for(var c = 0; c < emailGroups.elements.length; c++){
+
+
+           if( emailGroups.elements[c][0] == eGroup) {
+
+
+               console.log('"emailGroupId":"' + emailGroups.elements[c][1] + '"');
+
+
+               jString = jString.replace('"emailGroupId":"' + emailGroups.elements[c][0] + '"', '"emailGroupId":"' + emailGroups.elements[c][2] + '"');
+
+
+               //incomment for debug
+
+               console.log(jString);
+               console.log(emailGroups.elements[c][0],eGroup);
+
+           }
+
+       }
+
+
+        //swap folderIDs
+        for(var i = 0; i < emailSwaps.elements.length; i++){
+
+
+            if( emailSwaps.elements[i][1] == checkId) {
+
+
+                console.log('"emailGroupId":"' + emailSwaps.elements[i][1] + '"');
+
+
+                jString = jString.replace('"folderId":"' + emailSwaps.elements[i][1] + '"', '"folderId":"' + emailSwaps.elements[i][0] + '"');
+
+
+                //incomment for debug
+                //console.log(jString);
+
+            }
+
+        }
+
+        //var jbody = JSON.parse(jString);
+
+
+        var options = {
+            method: 'POST',
+            uri: 'https://secure.p06.eloqua.com/api/REST/2.0/assets/email',
+
+            headers: {
+                'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOlQwdHRlbmhAbTE5NjE=',
+                'Content-Type':'application/json; charset=UTF-8'
+            },
+            body: jString
+            //json: true // Automatically parses the JSON string in the response
+        };
+
+        rp(options)
+
+            .then(function (repos) {
+
+                console.log("EMAIL CREATED");
+
+
+
+                jsonFS.writeFile(wfile, jString, function (err) {
+                    console.error(err)
+                });
+
+
+                var csvWriteStream = csv.format({headers: true}),
+                    writableStream = fs.createWriteStream("./csv/emails-temp.csv");
+
+                writableStream.on("finish", function(){
+                    console.log("DONE!");
+                });
+
+                csvWriteStream.pipe(writableStream);
+
+                fs.createReadStream("./csv/emails.csv")
+                    .pipe(csv())
+                    .on("data", function (data) {
+
+                        if(data[1] == ref){
+
+                            data[3] = 1;
+                            csvWriteStream.write([data[0],data[1],data[2],data[3]]);
+                        }else{
+
+                            csvWriteStream.write([data[0],data[1],data[2],data[3]]);
+                        }
+
+
+                    })
+                    .on("end", function () {
+
+
+                        csvWriteStream.end();
+
+                        fs.unlink('./csv/emails.csv', function(err) {
+                            if (err) throw err;
+                            console.log('successfully deleted /csv/emails.csv');
+                        });
+
+                        fs.rename('./csv/emails-temp.csv', './csv/emails.csv', function (err) {
+                            if (err) throw err;
+                            console.log('successfully renamed /csv/emails.csv');
+                        });
+
+
+
+                        res.send(200);
+
+                    });
+
+
+
+
+            }).catch(function(err){
+
+                console.log(err);
+
+        });
+
+
+
+
+    });
+
+
+
+
+
+
+}
+
+
+
+
 var fieldHTML = "<html><body><table><tr><th>GLF ID</th><th>GLF NAME</th><th>GLF DATATYPE</th><th>CAP ID</th><th>CAP NAME</th><th>CAP DATATYPE</th></tr>";
+
+
+
 
 
 function runFieldSet(arr, count, res) {
@@ -552,6 +895,7 @@ function runReport(id, res) {
                 if (repos.htmlContent.html) {
 
                     html = repos.htmlContent.html;
+
                 } else {
 
                     html = repos.htmlContent.htmlBody;
@@ -633,11 +977,39 @@ function runReport(id, res) {
 
 
 
+                console.log("GENERATE TEMPORARY REPORT");
+
+                var file = 'email_reports/all/' + repos.id + '.json';
+
+
+
+                if (repos.htmlContent.html) {
+
+                    console.log("HTMLREPLACE");
+
+                    repos.htmlContent.html = html2;
+
+                } else {
+
+                    console.log("HTMLREPLACE");
+
+                    repos.htmlContent.htmlBody = html2;
+                }
+
+                console.log('REPORT READY');
+
+                jsonFS.writeFile(file, repos, function (err) {
+                    console.error(err)
+                });
+
+                console.log('--' + file + " written.");
+
                 res.render('emailReport', {
                     links: matches,
                     html: html,
                     html2: html2,
                     fm: fieldMerges,
+                    id: repos.id,
                     name: repos.name,
                     reply_to: repos.reply_to,
                     subject: repos.subject,
@@ -709,6 +1081,8 @@ function pageList(page, type, res, wf) {
 
                         }
                     }
+
+
                     if (type == 'programs') {
 
                         if (programs.checkExists(repos.elements[i].name)) {

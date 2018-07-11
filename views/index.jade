@@ -2,19 +2,30 @@ extends layout
 
 block content
   h3 #{title}
-  select.biglist
-
+  table.table.table-bordered.table-sm.table-striped
     - for (var i = 0; i < data.length; i++) {
-      option(value=data[i][1])= data[i][0]
-    - }
-  a#goto GENERATE REPORT
+    - if(i == 0){
+        tr
+          th= data[i][0]
+          th= data[i][1]
+          th= data[i][2]
+          th Report
+          th Status
+    - }else{
+        tr
+          td= data[i][0]
+          td= data[i][1]
+          th= data[i][2]
+          td
+            a(href="/emails/report/" + data[i][1]) Report
+          td.status(value=data[i][3])= data[i][3]
+    - }}
 
-script.
-    $( document ).ready(function() {
-        $('.biglist').on("change",function(){
-            console.log("gdghdsh");
-        });
-    });
+
+
+
+
+
 
 
 

@@ -55,12 +55,17 @@ block content
           h5.card-title Email Source
           samp.card-text
             | !{html}
+      br
+      button.btn.btn-danger.btn-lg.btn-block.approve(type="button" signalID="#{id}" signalResult="Review") Mark for Review
     .col-md-5(style='text-align:-webkit-center')
       .card(style='width: 100%;')
         .card-body
           h5.card-title Email Target
           samp.card-text
             | !{html2}
+      br
+      button.btn.btn-success.btn-lg.btn-block.approve(type="button" signalID="#{id}" signalResult="Approve") Approve
+
      .col-md-1
 
 
