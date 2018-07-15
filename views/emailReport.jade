@@ -27,6 +27,7 @@ block content
             td(scope='col') #{fm}
 
 
+      h4.text-center Images
 
       table.table.table-sm
         thead.thead-dark
@@ -36,14 +37,30 @@ block content
             th(scope='col') Replacement
         tbody
 
-
-
-
         each ll, index in links.elements
           tr
             th(scope='row')=index
             td=ll.source
             td=ll.replacement
+
+
+      h4.text-center Hyperlinks
+
+      table.table.table-sm
+        thead.thead-dark
+          tr
+            th(scope='col') #
+            th(scope='col') Source
+            th(scope='col') Replacement
+        tbody
+
+        each ll, index in links2
+          tr
+            th(scope='row')=index
+            td=ll[0]
+            td=ll[1]
+
+
     .col-md-1
 
   .mt-8.col-md-12

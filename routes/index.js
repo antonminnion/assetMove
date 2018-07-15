@@ -22,18 +22,11 @@ var csv = require('fast-csv');
 
 var writeFile = require('write');
 
-
 var jsonFS = require('jsonfile');
-
 
 var _ = require('lodash');
 
-
-
-
-
 var validEntityArray = [];
-
 
 var running = false;
 
@@ -606,8 +599,32 @@ function approveEmail(ref,res){
         jString = jString.replace('emailFooterId":"' + footId + '"','emailFooterId":"10"');
 
 
-//TODO Email Group Transform
 
+        //TODO Dynamic Content swap
+
+        //TODO Blind form submits
+
+        //TODO Link exchange
+
+        //TODO Footer links
+
+        /*
+
+
+        // GETS FINAL REDIRECT URL
+
+        var request = require('request');
+        var r = request.get('http://google.com?q=foo', function (err, res, body) {
+            console.log(r.uri.href);
+            console.log(res.request.uri.href);
+
+            // Mikael doesn't mention getting the uri using 'this' so maybe it's best to avoid it
+            // please add a comment if you know why this might be bad
+            console.log(this.uri.href);
+        });
+
+
+        */
 
 
 
@@ -656,7 +673,6 @@ function approveEmail(ref,res){
 
         }
 
-        //var jbody = JSON.parse(jString);
 
 
         var options = {
@@ -908,8 +924,7 @@ function runReport(id, res) {
                 var regex = /src\s*=\s*"(.+?)"/g;
 
 
-                console.log(regex);
-                console.log(regex.test('src="gsdhhdsgdsgh"'));
+
 
 
                 html = html.replace(regex, function (match) {
@@ -958,70 +973,156 @@ function runReport(id, res) {
 
                 }
 
-                var html2 = html;
-
-                for (var m = 0; m < matches.elements.length; m++) {
 
 
-                    console.log();
-                    html2 = html2.replace(matches.elements[m].source.toLowerCase(), matches.elements[m].replacement);
-                    console.log("REPLACE\n", matches.elements[m].source.toLowerCase(), matches.elements[m].replacement);
+                //TODO Dynamic Content swap
+
+                //TODO Blind form submits
+
+                //TODO Link exchange
+
+                //TODO Footer links
+
+                var lRegex = /href\s*=\s*"(.+?)"/g;
+
+                var arr = html.match(lRegex);
+
+                for(var t = 0; t < arr.length; t++){
+
+                    arr[t] = arr[t].replace('href=', '');
+
+                    arr[t] = arr[t].replace(/"/g, '');
+                    console.log(arr[t]);
+
 
 
                 }
 
 
 
-                html2 = html2.replace("<span class=eloquaemail >Department1</span>","<span class=eloquaemail >Division1</span>");
+                var count = 0;
+
+                recursiveLinkGet(arr,count);
+
+                var links = [];
+
+                var contains = [];
+
+                function recursiveLinkGet(arr,count){
+
+
+                    var options = {
+                        method: 'GET',
+                        uri: arr[count],
+                        resolveWithFullResponse: true
+                    };
+
+
+                    rp(options).then(function (resp) {
+
+                        console.log("FIND: " + arr[count] + "  REPLACE: " + JSON.stringify(resp.request.href));
+
+
+                        if(!_.includes(contains,resp.request.href)) {
+                            contains.push(resp.request.href);
+                            links.push([arr[count],resp.request.href]);
+                        }
 
 
 
+                        count ++;
+                        if(count < arr.length ) {
 
-                console.log("GENERATE TEMPORARY REPORT");
+                            recursiveLinkGet(arr, count);
 
-                var file = 'email_reports/all/' + repos.id + '.json';
+                        }else{
+
+                            finish(links);
+                        }
+
+                    }).catch(function(err){console.log(err)});
 
 
 
-                if (repos.htmlContent.html) {
-
-                    console.log("HTMLREPLACE");
-
-                    repos.htmlContent.html = html2;
-
-                } else {
-
-                    console.log("HTMLREPLACE");
-
-                    repos.htmlContent.htmlBody = html2;
                 }
 
-                console.log('REPORT READY');
+               function finish(arr) {
 
-                jsonFS.writeFile(file, repos, function (err) {
-                    console.error(err)
-                });
-
-                console.log('--' + file + " written.");
-
-                res.render('emailReport', {
-                    links: matches,
-                    html: html,
-                    html2: html2,
-                    fm: fieldMerges,
-                    id: repos.id,
-                    name: repos.name,
-                    reply_to: repos.reply_to,
-                    subject: repos.subject,
-                    folderId: repos.folderId
-                });
+                   var html2 = html;
 
 
-                running = false;
+                   for (var b = 0; b < arr.length; b++) {
+
+                       console.log(arr[b]);
+
+                      // var rg = new RegExp(arr[b][0], "g");
+                       html2 = html2.replace(arr[b][0], arr[b][1]);
+
+                   }
+
+                   //arr = _.uniq(arr);
+
+                   for (var m = 0; m < matches.elements.length; m++) {
 
 
-                matches = {};
-                html = "";
+                       // console.log();
+                       html2 = html2.replace(matches.elements[m].source.toLowerCase(), matches.elements[m].replacement);
+                       //  console.log("REPLACE\n", matches.elements[m].source.toLowerCase(), matches.elements[m].replacement);
+
+
+                   }
+
+
+                   html2 = html2.replace("<span class=eloquaemail >Department1</span>", "<span class=eloquaemail >Division1</span>");
+
+
+                   console.log("GENERATE TEMPORARY REPORT");
+
+                   var file = 'email_reports/all/' + repos.id + '.json';
+
+
+                   if (repos.htmlContent.html) {
+
+                       console.log("HTMLREPLACE");
+
+                       repos.htmlContent.html = html2;
+
+                   } else {
+
+                       console.log("HTMLREPLACE");
+
+                       repos.htmlContent.htmlBody = html2;
+                   }
+
+                   console.log('REPORT READY');
+
+                   jsonFS.writeFile(file, repos, function (err) {
+                       console.error(err)
+                   });
+
+                   console.log('--' + file + " written.");
+
+                   res.render('emailReport', {
+                       links: matches,
+                       links2: arr,
+                       html: html,
+                       html2: html2,
+                       fm: fieldMerges,
+                       id: repos.id,
+                       name: repos.name,
+                       reply_to: repos.reply_to,
+                       subject: repos.subject,
+                       folderId: repos.folderId
+                   });
+
+
+                   running = false;
+
+
+                   matches = {};
+                   html = "";
+
+               }
 
 
             }else{
