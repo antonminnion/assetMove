@@ -3,11 +3,15 @@ var router = express.Router();
 var rp = require('request-promise');
 var emails = require('../classes/emails');
 var programs = require('../classes/programs');
+
+var campaigns = require('../classes/campaigns');
 var filters = require('../classes/filters');
 var writeCSV = require('write-csv');
 var images = require('../classes/images');
 var fields = require('../classes/fields');
 var folders = require('../classes/folders');
+
+var footers = require('../classes/footers');
 
 var segments = require('../classes/segments');
 var segments2 = require('../classes/segments2');
@@ -76,6 +80,82 @@ router.get('/segments/list', function (req, res, next) {
     if (!running) {
         pageList(1, 'segments', res, req.params.writefile);
     }
+
+});
+
+
+
+
+router.get('/programs/create/:id', function(req,res) {
+
+
+    var options = {
+        uri: 'https://secure.p01.eloqua.com/api/REST/2.0/assets/program/' + req.params.id + '?depth=complete',
+
+        headers: {
+            'Authorization': 'Basic TWV0dGxlclRvbGVkb0VNRUFcQW50b24uTWlubmlvbjpCcmlkcG9ydDc4',
+            'Content-Type': 'application/json'
+        },
+        json: true // Automatically parses the JSON string in the response
+    };
+
+
+    rp(options)
+        .then(function (repos) {
+
+
+            for(var i = 0; i < repos.elements.length; i++){
+                repos.elements[i].id = "-" + repos.elements[i].id;
+
+
+                if(repos.elements[i].outputTerminals) {
+
+                    console.log(repos.elements[i].outputTerminals.length);
+
+                        for (var c = 0; c < reposelements[i].outputTerminals.length; c++) {
+
+
+                            if(repos.elements[i].outputTerminals[c]) {
+
+                                console.log(repos.elements[i].outputTerminals[c].id);
+
+
+
+
+                                repos.elements[i].outputTerminals[c].connectedId = "-" + repos.elements[i].outputTerminals[c].connectedId;
+
+                                repos.elements[i].outputTerminals[c].id = "-" + repos.elements[i].outputTerminals[c].id;
+
+                            }
+
+                        }
+
+                }
+
+
+            }
+
+
+            var wfile = 'program-json/up' + req.params.id + ".json";
+            jsonFS.writeFile(wfile, repos, function (err) {
+                console.error(err)
+            });
+
+
+            console.log(repos);
+
+            res.send(200);
+
+
+
+        }).catch(function(err){
+
+            console.log(err);
+            res.send(500);
+    });
+
+
+
 
 });
 
@@ -398,6 +478,16 @@ router.get('/emails/list/:writefile', function (req, res, next) {
 
 });
 
+router.get('/campaigns/list/:writefile', function (req, res, next) {
+
+
+    if (!running) {
+        pageList(1, 'campaigns', res, req.params.writefile);
+    }
+
+
+});
+
 router.get('/folders/list', function (req, res, next) {
 
 
@@ -583,6 +673,8 @@ function approveEmail(ref,res){
         var checkId = obj.folderId;
         var headId  = obj.emailHeaderId;
         var footId  = obj.emailFooterId;
+
+        console.log("FOOTER ID: ");
         var eGroup  = obj.emailGroupId;
 
         console.log("CHECKID: " + checkId);
@@ -595,12 +687,28 @@ function approveEmail(ref,res){
        // set default header ID
         jString = jString.replace('emailHeaderId":"' + headId + '"','emailHeaderId":"8"');
 
+
+
+
         // set default footer ID
-        jString = jString.replace('emailFooterId":"' + footId + '"','emailFooterId":"10"');
+
+        console.log('emailFooterId":"' + footId);
+
+            for(var t = 0; t <  footers.elements.length; t++) {
+
+             if(footId == footers.elements[t][0]) {
+                 jString = jString.replace('emailFooterId":"' + footId + '"', 'emailFooterId":"' + footers.elements[t][1] + '"');
+
+                 console.log('emailFooterId":"' + footId + '" -----  emailFooterId":"' + footers.elements[t][1] + '"');
+
+                 break;
+             }
+
+
+         }
 
 
 
-        //TODO Dynamic Content swap
 
         //TODO Blind form submits
 
@@ -608,23 +716,6 @@ function approveEmail(ref,res){
 
         //TODO Footer links
 
-        /*
-
-
-        // GETS FINAL REDIRECT URL
-
-        var request = require('request');
-        var r = request.get('http://google.com?q=foo', function (err, res, body) {
-            console.log(r.uri.href);
-            console.log(res.request.uri.href);
-
-            // Mikael doesn't mention getting the uri using 'this' so maybe it's best to avoid it
-            // please add a comment if you know why this might be bad
-            console.log(this.uri.href);
-        });
-
-
-        */
 
 
 
@@ -653,14 +744,16 @@ function approveEmail(ref,res){
        }
 
 
+       var swapCheck = false;
+
         //swap folderIDs
         for(var i = 0; i < emailSwaps.elements.length; i++){
 
 
             if( emailSwaps.elements[i][1] == checkId) {
 
+                swapCheck = true;
 
-                console.log('"emailGroupId":"' + emailSwaps.elements[i][1] + '"');
 
 
                 jString = jString.replace('"folderId":"' + emailSwaps.elements[i][1] + '"', '"folderId":"' + emailSwaps.elements[i][0] + '"');
@@ -672,6 +765,22 @@ function approveEmail(ref,res){
             }
 
         }
+
+        if(!swapCheck){
+
+
+            jString = jString.replace(/."folderId":"[0-9]*"/, " ");
+
+        }
+
+
+
+        var lastOutput = 'email_reports/last.json';
+
+        jsonFS.writeFile(lastOutput, JSON.parse(jString), function (err) {
+            console.error(err)
+        });
+
 
 
 
@@ -753,6 +862,7 @@ function approveEmail(ref,res){
                 console.log(err);
 
         });
+
 
 
 
@@ -967,9 +1077,17 @@ function runReport(id, res) {
 
                 var fieldMerges = false;
 
+                var dynamicContent = false;
+
                 if (html.search('<span class=eloquaemail') > 0) {
 
                     fieldMerges = true;
+
+                }
+
+                if (html.search('elqtype="DynamicContent"') > 0) {
+
+                    dynamicContent = true;
 
                 }
 
@@ -1020,7 +1138,26 @@ function runReport(id, res) {
 
                     rp(options).then(function (resp) {
 
-                        console.log("FIND: " + arr[count] + "  REPLACE: " + JSON.stringify(resp.request.href));
+                       // console.log("FIND: " + arr[count] + "  REPLACE: " + JSON.stringify(resp.request.href));
+
+
+
+                        console.log("\n\n "  + resp.request.href);
+
+                        console.log();
+
+
+                        resp.request.href = resp.request.href.replace("elqSiteID=1103", "elqSiteID=961579678");
+                        resp.request.href = resp.request.href.replace("s1103.t.eloqua", "s961579678.t.eloqua");
+                        resp.request.href = resp.request.href.replace(/.elqTrackId.*/, "");
+
+                        resp.request.href = resp.request.href.replace("http://app.glf.mt.com/e/es?s","http://s455208869.t.en25.com/e/es?s");
+
+
+
+
+
+
 
 
                         if(!_.includes(contains,resp.request.href)) {
@@ -1060,14 +1197,13 @@ function runReport(id, res) {
 
                    }
 
-                   //arr = _.uniq(arr);
+
 
                    for (var m = 0; m < matches.elements.length; m++) {
 
 
                        // console.log();
                        html2 = html2.replace(matches.elements[m].source.toLowerCase(), matches.elements[m].replacement);
-                       //  console.log("REPLACE\n", matches.elements[m].source.toLowerCase(), matches.elements[m].replacement);
 
 
                    }
@@ -1112,7 +1248,8 @@ function runReport(id, res) {
                        name: repos.name,
                        reply_to: repos.reply_to,
                        subject: repos.subject,
-                       folderId: repos.folderId
+                       folderId: repos.folderId,
+                       dynamicContent: dynamicContent
                    });
 
 
@@ -1148,10 +1285,12 @@ function pageList(page, type, res, wf) {
 
     running = true;
 
+    //validEntityArray = [];
+
     console.log("RUNNING PAGE " + page);
 
     var options = {
-        uri: 'https://secure.p01.eloqua.com/api/REST/2.0/assets/contact/' + type + '?page=' + page,
+        uri: 'https://secure.p01.eloqua.com/api/REST/2.0/assets/' + type + '?page=' + page,
 
         headers: {
             'Authorization': 'Basic TWV0dGxlclRvbGVkb0VNRUFcQW50b24uTWlubmlvbjpCcmlkcG9ydDc4',
@@ -1187,6 +1326,22 @@ function pageList(page, type, res, wf) {
                     if (type == 'programs') {
 
                         if (programs.checkExists(repos.elements[i].name)) {
+
+                            validEntityArray.push({
+                                name: repos.elements[i].name,
+                                id: repos.elements[i].id,
+                                folderId: repos.elements[i].folderId
+                            });
+
+                        }
+
+                    }
+
+                    if (type == 'campaigns') {
+
+                        console.log(repos.elements[i].name);
+
+                        if (campaigns.checkExists(repos.elements[i].name)) {
 
                             validEntityArray.push({
                                 name: repos.elements[i].name,
@@ -1238,7 +1393,7 @@ function pageList(page, type, res, wf) {
             } else {
 
 
-                writeCSV('./csv/segments.csv', validEntityArray);
+                writeCSV('./csv/campaigns.csv', validEntityArray);
 
 
                 var html = "<html><head></head><h1>" + type + "</h1><body><table>";
@@ -1273,3 +1428,5 @@ function pageList(page, type, res, wf) {
 
 
 module.exports = router;
+
+
