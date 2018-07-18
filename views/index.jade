@@ -1,32 +1,40 @@
 extends layout
 
 block content
+
   h3 #{title}
+  p #{bookmark}
+
+  - for (var i = 0; i < 2201; i+=100) {
+  a(href="##{i}")= i
+  &nbsp;|&nbsp;
+  - }
+
   table.table.table-bordered.table-sm.table-striped
     - for (var i = 0; i < data.length; i++) {
     - if(i == 0){
         tr
+          th #
           th= data[i][0]
           th= data[i][1]
           th= data[i][2]
           th Report
           th Status
     - }else{
+        - if(data[i][3] != 0){
+        tr(style="display:none;")
+        - }else{
         tr
+        - }
+          td
+            a(name='#{i}')= i
           td= data[i][0]
           td= data[i][1]
           th= data[i][2]
           td
-            a(href="/emails/report/" + data[i][1]) Report
+            a(href="/emails/report/" + data[i][1] + "?bm=" + i) Report
           td.status(value=data[i][3])= data[i][3]
     - }}
-
-
-
-
-
-
-
 
 
 

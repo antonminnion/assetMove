@@ -77,7 +77,7 @@ block content
           samp.card-text
             | !{html}
       br
-      button.btn.btn-danger.btn-lg.btn-block.approve(type="button" signalID="#{id}" signalResult="Review") Mark for Review
+      button.btn.btn-danger.btn-lg.btn-block.approve(type="button" signalID="#{id}" signalResult="Review" bookmark="#{bookmark}") Mark for Review
     .col-md-5(style='text-align:-webkit-center')
       .card(style='width: 100%;')
         .card-body
@@ -85,7 +85,7 @@ block content
           samp.card-text
             | !{html2}
       br
-      button.btn.btn-success.btn-lg.btn-block.approve(type="button" signalID="#{id}" signalResult="Approve") Approve
+      button.btn.btn-success.btn-lg.btn-block.approve(type="button" signalID="#{id}" signalResult="Approve" bookmark="#{bookmark}") Approve
 
      .col-md-1
 

@@ -35,18 +35,25 @@ var validEntityArray = [];
 var running = false;
 
 
+
+
 /* GET home page. */
 router.get('/', function (req, res, next) {
 
 
-    buildTable(res);
 
+
+    buildTable(res, req.query.bookmark);
 
 
 });
 
 
-function buildTable(res) {
+
+
+
+
+function buildTable(res, bm) {
 
     var json = {};
 
@@ -66,7 +73,9 @@ function buildTable(res) {
         .on("end", function () {
 
 
-            res.render('index', {title: 'BP Asset Move', data: json.list});
+
+
+            res.render('index', {title: 'BP Asset Move', data: json.list, bookmark: bm});
         });
 
 }
@@ -110,14 +119,12 @@ router.get('/programs/create/:id', function(req,res) {
 
                 if(repos.elements[i].outputTerminals) {
 
-                    console.log(repos.elements[i].outputTerminals.length);
 
                         for (var c = 0; c < reposelements[i].outputTerminals.length; c++) {
 
 
                             if(repos.elements[i].outputTerminals[c]) {
 
-                                console.log(repos.elements[i].outputTerminals[c].id);
 
 
 
@@ -142,7 +149,6 @@ router.get('/programs/create/:id', function(req,res) {
             });
 
 
-            console.log(repos);
 
             res.send(200);
 
@@ -544,29 +550,35 @@ router.get('/folders/list', function (req, res, next) {
 
 router.get('/emails/report/:id', function (req, res, next) {
 
+console.log("\n\nBM");
+
+
+    var bk = (req.query.bm - 3);
+
 
     if (!running) {
-        runReport(req.params.id, res);
+        runReport(req.params.id, res, bk);
     }
 
 
 });
 
 
-router.get('/emails/report/update/:id/:result', function (req, res, next) {
+router.get('/emails/report/update/:id/:result/:bookmark', function (req, res, next) {
 
 
     if(req.params.result == "Approve") {
 
-        console.log("APPROVED - " + req.params.id);
+        console.log("APPROVED - " + req.params.bookmark);
 
-        approveEmail(req.params.id,res);
+        approveEmail(req.params.id,res,  req.params.bookmark);
 
     }else{
 
         console.log("FOR REVIEW - " + req.params.id);
 
-        reviewEmail(req.params.id,res);
+
+        reviewEmail(req.params.id,res,  req.params.bookmark);
 
     }
 
@@ -581,7 +593,7 @@ router.get('/fields/report/', function (req, res, next) {
 
     var arr = fields.elements;
 
-    console.log(arr);
+    //console.log(arr);
 
     runFieldSet(arr, 0, res)
 
@@ -590,7 +602,7 @@ router.get('/fields/report/', function (req, res, next) {
 
 
 
-function reviewEmail(id,res){
+function reviewEmail(id,res, bookmark){
 
 
     var file = 'email_reports/all/' + id + '.json';
@@ -649,7 +661,6 @@ function reviewEmail(id,res){
             });
 
 
-
             res.send(200);
 
         });
@@ -657,10 +668,12 @@ function reviewEmail(id,res){
 }
 
 
-function approveEmail(ref,res){
+function approveEmail(ref,res, bookmark){
 
 
 
+
+    console.log("BOOKAMEBH   " + bookmark);
     var file = 'email_reports/all/' + ref + '.json';
 
     var wfile = 'email_reports/approved/' + ref + '.json';
@@ -677,7 +690,7 @@ function approveEmail(ref,res){
         console.log("FOOTER ID: ");
         var eGroup  = obj.emailGroupId;
 
-        console.log("CHECKID: " + checkId);
+      //  console.log("CHECKID: " + checkId);
 
        var jString = JSON.stringify(obj);
 
@@ -686,6 +699,12 @@ function approveEmail(ref,res){
         console.log('emailHeaderId":"' + headId + '"');
        // set default header ID
         jString = jString.replace('emailHeaderId":"' + headId + '"','emailHeaderId":"8"');
+
+
+        jString = jString.replace('bounce@glf2.mt.com','elqbounceback@online.mt.com');
+
+
+
 
 
 
@@ -736,8 +755,8 @@ function approveEmail(ref,res){
 
                //incomment for debug
 
-               console.log(jString);
-               console.log(emailGroups.elements[c][0],eGroup);
+               // console.log(jString);
+               // console.log(emailGroups.elements[c][0],eGroup);
 
            }
 
@@ -850,7 +869,7 @@ function approveEmail(ref,res){
 
 
 
-                        res.send(200);
+                        res.send({bookmark:bookmark});
 
                     });
 
@@ -892,7 +911,6 @@ function runFieldSet(arr, count, res) {
     var comp2 = {};
 
 
-    console.log(arr[count][0], arr[count][1]);
 
 
     var options = {
@@ -932,7 +950,6 @@ function runFieldSet(arr, count, res) {
                 .then(function (repos2) {
 
 
-                    console.log(repos2);
                     comp2.id = repos2.id;
                     comp2.name = repos2.name;
                     comp2.dataType = repos2.dataType;
@@ -965,6 +982,7 @@ function runFieldSet(arr, count, res) {
                         fieldHTML += "</tr></table></body></html>"
 
                         res.send(fieldHTML);
+
                     } else {
 
                         runFieldSet(arr, count, res);
@@ -987,7 +1005,7 @@ function runFieldSet(arr, count, res) {
 };
 
 
-function runReport(id, res) {
+function runReport(id, res, bk) {
 
 
     running = true;
@@ -1044,7 +1062,6 @@ function runReport(id, res) {
                     match = match.replace('{', '%7b');
                     match = match.replace('}', '%7d');
 
-                    console.log(match);
 
                     return match.toLowerCase();
 
@@ -1110,7 +1127,7 @@ function runReport(id, res) {
                     arr[t] = arr[t].replace('href=', '');
 
                     arr[t] = arr[t].replace(/"/g, '');
-                    console.log(arr[t]);
+                   // console.log(arr[t]);
 
 
 
@@ -1141,17 +1158,30 @@ function runReport(id, res) {
                        // console.log("FIND: " + arr[count] + "  REPLACE: " + JSON.stringify(resp.request.href));
 
 
-
-                        console.log("\n\n "  + resp.request.href);
-
-                        console.log();
+                        //
+                        // console.log("\n\n LINK CHECK");
+                        //
+                        // console.log( arr[count]);
+                        //
+                        // var matchess =  resp.request.href.match("s1103.t.eloqua");
+                        //
+                        // console.log(matchess);
 
 
                         resp.request.href = resp.request.href.replace("elqSiteID=1103", "elqSiteID=961579678");
+
+
                         resp.request.href = resp.request.href.replace("s1103.t.eloqua", "s961579678.t.eloqua");
                         resp.request.href = resp.request.href.replace(/.elqTrackId.*/, "");
 
-                        resp.request.href = resp.request.href.replace("http://app.glf.mt.com/e/es?s","http://s455208869.t.en25.com/e/es?s");
+                        arr[count] = arr[count].replace(/.elqTrackId.*/, "");
+
+
+
+
+
+
+                        resp.request.href = resp.request.href.replace("http://app.glf.mt.com/e/es?s","http://app.online.mt.com/e/es?s");
 
 
 
@@ -1160,10 +1190,10 @@ function runReport(id, res) {
 
 
 
-                        if(!_.includes(contains,resp.request.href)) {
-                            contains.push(resp.request.href);
+                        // if(!_.includes(contains,resp.request.href)) {
+                        //     contains.push(resp.request.href);
                             links.push([arr[count],resp.request.href]);
-                        }
+                      //  }
 
 
 
@@ -1174,7 +1204,7 @@ function runReport(id, res) {
 
                         }else{
 
-                            finish(links);
+                            finish(links,bk);
                         }
 
                     }).catch(function(err){console.log(err)});
@@ -1183,17 +1213,17 @@ function runReport(id, res) {
 
                 }
 
-               function finish(arr) {
+               function finish(arr,bookmark) {
 
                    var html2 = html;
 
 
+
+
                    for (var b = 0; b < arr.length; b++) {
 
-                       console.log(arr[b]);
+                       console.log("MM")
 
-                      // var rg = new RegExp(arr[b][0], "g");
-                       html2 = html2.replace(arr[b][0], arr[b][1]);
 
                    }
 
@@ -1238,6 +1268,8 @@ function runReport(id, res) {
 
                    console.log('--' + file + " written.");
 
+                   console.log("BOOKMARK #######" + bookmark);
+
                    res.render('emailReport', {
                        links: matches,
                        links2: arr,
@@ -1249,7 +1281,8 @@ function runReport(id, res) {
                        reply_to: repos.reply_to,
                        subject: repos.subject,
                        folderId: repos.folderId,
-                       dynamicContent: dynamicContent
+                       dynamicContent: dynamicContent,
+                       bookmark: bookmark
                    });
 
 
@@ -1302,7 +1335,6 @@ function pageList(page, type, res, wf) {
     rp(options)
         .then(function (repos) {
 
-            console.log(repos.elements);
 
 
             if (repos.elements.length > 0) {
@@ -1339,7 +1371,6 @@ function pageList(page, type, res, wf) {
 
                     if (type == 'campaigns') {
 
-                        console.log(repos.elements[i].name);
 
                         if (campaigns.checkExists(repos.elements[i].name)) {
 
@@ -1356,7 +1387,6 @@ function pageList(page, type, res, wf) {
                     if (type == 'segments') {
 
 
-                        console.log(repos.elements[i]);
 
                         if (segments.checkExists(repos.elements[i].name)) {
 

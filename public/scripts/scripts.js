@@ -1,3 +1,5 @@
+
+
 $(document).ready(function(){
 
 
@@ -9,12 +11,18 @@ $(document).ready(function(){
 
         var id = $(this).attr('signalID');
         var res = $(this).attr('signalResult');
+        var bookmark = $(this).attr('bookmark');
 
-        $.get( "update/" + id + "/" + res, function( data ) {
+        console.log("BBB");
+        console.log(bookmark);
+
+        $.get( "update/" + id + "/" + res + "/" + bookmark, function( data ) {
 
 
             console.log("Redirecting....");
-            $(location).attr('href', '/')
+
+            console.log(data);
+            $(location).attr('href', '/#' + bookmark)
         });
     });
 
