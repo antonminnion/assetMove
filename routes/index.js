@@ -1146,68 +1146,73 @@ function runReport(id, res, bk) {
                 function recursiveLinkGet(arr,count){
 
 
-                    var options = {
-                        method: 'GET',
-                        uri: arr[count],
-                        resolveWithFullResponse: true
-                    };
+                    console.log(arr[count]);
+
+                    if(arr[count] == " title="){
+
+                        count++;
+                        recursiveLinkGet(arr, count);
+
+                    }else {
+
+                        var options = {
+                            method: 'GET',
+                            uri: arr[count],
+                            resolveWithFullResponse: true
+                        };
 
 
-                    rp(options).then(function (resp) {
+                        rp(options).then(function (resp) {
 
-                       // console.log("FIND: " + arr[count] + "  REPLACE: " + JSON.stringify(resp.request.href));
-
-
-                        //
-                        // console.log("\n\n LINK CHECK");
-                        //
-                        // console.log( arr[count]);
-                        //
-                        // var matchess =  resp.request.href.match("s1103.t.eloqua");
-                        //
-                        // console.log(matchess);
+                            // console.log("FIND: " + arr[count] + "  REPLACE: " + JSON.stringify(resp.request.href));
 
 
-                        resp.request.href = resp.request.href.replace("elqSiteID=1103", "elqSiteID=961579678");
+                            //
+                            // console.log("\n\n LINK CHECK");
+                            //
+                            // console.log( arr[count]);
+                            //
+                            // var matchess =  resp.request.href.match("s1103.t.eloqua");
+                            //
+                            // console.log(matchess);
 
 
-                        resp.request.href = resp.request.href.replace("s1103.t.eloqua", "s961579678.t.eloqua");
-                        resp.request.href = resp.request.href.replace(/.elqTrackId.*/, "");
-
-                        arr[count] = arr[count].replace(/.elqTrackId.*/, "");
-
-
-
-
-
-
-                        resp.request.href = resp.request.href.replace("http://app.glf.mt.com/e/es?s","http://app.online.mt.com/e/es?s");
+                            resp.request.href = resp.request.href.replace("elqSiteID=1103", "elqSiteID=961579678");
 
 
 
 
+                            resp.request.href = resp.request.href.replace("s1103.t.eloqua", "s961579678.t.eloqua");
+                            resp.request.href = resp.request.href.replace(/.elqTrackId.*/, "");
+
+                            arr[count] = arr[count].replace(/.elqTrackId.*/, "");
 
 
+                            resp.request.href = resp.request.href.replace("http://app.glf.mt.com/e/es?s", "http://app.online.mt.com/e/es?s");
 
 
-                        // if(!_.includes(contains,resp.request.href)) {
-                        //     contains.push(resp.request.href);
-                            links.push([arr[count],resp.request.href]);
-                      //  }
+                            // if(!_.includes(contains,resp.request.href)) {
+                            //     contains.push(resp.request.href);
+                            links.push([arr[count], resp.request.href]);
+                            //  }
 
 
+                            count++;
+                            if (count < arr.length) {
 
-                        count ++;
-                        if(count < arr.length ) {
 
-                            recursiveLinkGet(arr, count);
+                                recursiveLinkGet(arr, count);
 
-                        }else{
+                            } else {
 
-                            finish(links,bk);
-                        }
+                                finish(links, bk);
+                            }
 
-                    }).catch(function(err){console.log(err)});
+                        }).catch(function (err) {
+                            console.log(err)
+                        });
+
+                    }
 
 
 
@@ -1223,6 +1228,8 @@ function runReport(id, res, bk) {
                    for (var b = 0; b < arr.length; b++) {
 
                        console.log("MM")
+
+                       html2 = html2.replace(arr[b][0],arr[b][1]);
 
 
                    }
