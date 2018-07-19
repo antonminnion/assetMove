@@ -553,7 +553,7 @@ router.get('/emails/report/:id', function (req, res, next) {
 console.log("\n\nBM");
 
 
-    var bk = (req.query.bm - 3);
+    var bk = (req.query.bm - 8);
 
 
     if (!running) {
@@ -1153,7 +1153,12 @@ function runReport(id, res, bk) {
                         count++;
                         recursiveLinkGet(arr, count);
 
-                    }else {
+                    } else if (arr[count] == "v"){
+
+                        count++;
+                        recursiveLinkGet(arr, count);
+
+                    } else {
 
                         var options = {
                             method: 'GET',
