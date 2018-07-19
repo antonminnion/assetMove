@@ -1188,12 +1188,18 @@ function runReport(id, res, bk) {
 
 
                             resp.request.href = resp.request.href.replace("s1103.t.eloqua", "s961579678.t.eloqua");
+
+
+
+
                             resp.request.href = resp.request.href.replace(/.elqTrackId.*/, "");
 
                             arr[count] = arr[count].replace(/.elqTrackId.*/, "");
 
 
                             resp.request.href = resp.request.href.replace("http://app.glf.mt.com/e/es?s", "http://app.online.mt.com/e/es?s");
+
+                            resp.request.href = resp.request.href.replace("http://app.glf.mt.com/e/f2", "http://app.online.mt.com/e/f2");
 
 
                             // if(!_.includes(contains,resp.request.href)) {
