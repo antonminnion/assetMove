@@ -650,10 +650,10 @@ function reviewEmail(id,res, bookmark){
 
             csvWriteStream.end();
 
-            fs.unlink('./csv/emails.csv', function(err) {
-                if (err) throw err;
-                console.log('successfully deleted /csv/emails.csv');
-            });
+            // fs.unlink('./csv/emails.csv', function(err) {
+            //     if (err) throw err;
+            //     console.log('successfully deleted /csv/emails.csv');
+            // });
 
             fs.rename('./csv/emails-temp.csv', './csv/emails.csv', function (err) {
                 if (err) throw err;
