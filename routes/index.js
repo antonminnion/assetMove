@@ -437,7 +437,7 @@ router.get('/sharedfilters/createfiles', function (req, res, next) {
                         uri: 'https://secure.p06.eloqua.com/api/REST/2.0/assets/contact/filter',
 
                         headers: {
-                            'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOlQwdHRlbmhAbTE5NjE=',
+                            'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOkJyaWRwb3J0MTk3OA==',
                             'Content-Type': 'application/json'
                         },
                         method: 'POST',
@@ -512,7 +512,7 @@ router.get('/folders/list', function (req, res, next) {
             uri: 'https://secure.p06.eloqua.com/api/REST/2.0/assets/email/folder',
 
             headers: {
-                'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOlQwdHRlbmhAbTE5NjE=',
+                'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOkJyaWRwb3J0MTk3OA==',
                 'Content-Type': 'application/json'
             },
             body: {
@@ -808,7 +808,7 @@ function approveEmail(ref,res, bookmark){
             uri: 'https://secure.p06.eloqua.com/api/REST/2.0/assets/email',
 
             headers: {
-                'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOlQwdHRlbmhAbTE5NjE=',
+                'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOkJyaWRwb3J0MTk3OA==',
                 'Content-Type':'application/json; charset=UTF-8'
             },
             body: jString
@@ -939,7 +939,7 @@ function runFieldSet(arr, count, res) {
                 uri: 'https://secure.p06.eloqua.com/api/REST/2.0/assets/contact/field/' + arr[count][1],
 
                 headers: {
-                    'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOlQwdHRlbmhAbTE5NjE=',
+                    'Authorization': 'Basic TWV0dGxlclRvbGVkb0ludGVybmF0aW9uYWxJbmNcYW50b25taW5uaW9uOkJyaWRwb3J0MTk3OA==',
                     'Content-Type': 'application/json'
                 },
                 json: true // Automatically parses the JSON string in the response
